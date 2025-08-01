@@ -525,10 +525,9 @@ function handleCountryHover(e, country, tooltip) {
     // 获取国家信息
     const countryCode = country.classList[1]; // 获取国家代码 (如 CHN, USA)
     const countryName = getCountryName(countryCode);
-    const countryInfo = getCountryInfo(countryCode);
     
     // 显示工具提示
-    showTooltip(e, tooltip, countryName, countryInfo);
+    showTooltip(e, tooltip, countryName);
 }
 
 // 处理国家离开
@@ -558,10 +557,9 @@ function handleCountryClick(e, country) {
 }
 
 // 显示工具提示
-function showTooltip(e, tooltip, countryName, countryInfo) {
+function showTooltip(e, tooltip, countryName) {
     tooltip.innerHTML = `
         <div style="font-weight: bold; margin-bottom: 4px;">${countryName}</div>
-        ${countryInfo ? `<div style="font-size: 11px; color: #cccccc;">${countryInfo}</div>` : ''}
     `;
     
     // 定位工具提示
@@ -781,174 +779,7 @@ function getCountryName(countryCode) {
     return countryNames[countryCode] || countryCode;
 }
 
-// 获取国家信息
-function getCountryInfo(countryCode) {
-    // 这里可以添加更多国家信息
-    const countryInfo = {
-        'CHN': '世界第二大经济体，人口最多的国家',
-        'USA': '世界第一大经济体，超级大国',
-        'JPN': '世界第三大经济体，科技强国',
-        'DEU': '欧洲最大经济体，工业强国',
-        'GBR': '联合国安理会常任理事国',
-        'FRA': '欧洲重要国家，文化大国',
-        'ITA': '欧洲文艺复兴发源地',
-        'CAN': '世界第二大国家，资源丰富',
-        'AUS': '大洋洲最大国家',
-        'BRA': '南美洲最大国家',
-        'RUS': '世界最大国家，资源丰富',
-        'IND': '世界第二大人口国家',
-        'KOR': '亚洲四小龙之一',
-        'ESP': '伊比利亚半岛国家',
-        'MEX': '北美洲重要国家',
-        'IDN': '东南亚最大国家',
-        'NLD': '低地国家，贸易强国',
-        'SAU': '中东石油大国',
-        'TUR': '横跨欧亚大陆',
-        'CHE': '中立国，金融中心',
-        'SWE': '北欧福利国家',
-        'POL': '中欧重要国家',
-        'BEL': '欧盟总部所在地',
-        'THA': '东南亚旅游胜地',
-        'AUT': '中欧内陆国家',
-        'NOR': '北欧石油国家',
-        'ARE': '中东金融中心',
-        'IRN': '波斯文明古国',
-        'ISR': '中东科技强国',
-        'SGP': '亚洲金融中心',
-        'HKG': '亚洲国际都会',
-        'TWN': '亚洲四小龙之一',
-        'MYS': '东南亚新兴国家',
-        'PHL': '东南亚群岛国家',
-        'VNM': '东南亚新兴市场',
-        'BGD': '南亚人口大国',
-        'PAK': '南亚重要国家',
-        'EGY': '北非文明古国',
-        'ZAF': '非洲最发达国家',
-        'NGA': '非洲人口大国',
-        'KEN': '东非经济中心',
-        'ETH': '非洲文明古国',
-        'TZA': '东非重要国家',
-        'UGA': '东非内陆国家',
-        'GHA': '西非新兴国家',
-        'MOZ': '东南非国家',
-        'AGO': '西南非石油国家',
-        'CMR': '中非重要国家',
-        'CIV': '西非可可大国',
-        'MDG': '印度洋岛国',
-        'NER': '西非内陆国家',
-        'BFA': '西非内陆国家',
-        'MLI': '西非内陆国家',
-        'MWI': '东南非内陆国家',
-        'ZMB': '东南非内陆国家',
-        'SEN': '西非沿海国家',
-        'TCD': '中非内陆国家',
-        'SOM': '东非沿海国家',
-        'ZWE': '东南非内陆国家',
-        'GIN': '西非沿海国家',
-        'RWA': '东非内陆国家',
-        'BEN': '西非沿海国家',
-        'BDI': '东非内陆国家',
-        'TUN': '北非沿海国家',
-        'BOL': '南美内陆国家',
-        'HND': '中美洲国家',
-        'GTM': '中美洲国家',
-        'NIC': '中美洲国家',
-        'SLV': '中美洲国家',
-        'CRI': '中美洲国家',
-        'PAN': '中美洲国家',
-        'URY': '南美沿海国家',
-        'PRY': '南美内陆国家',
-        'GUF': '南美法属领地',
-        'SUR': '南美沿海国家',
-        'GUY': '南美沿海国家',
-        'ECU': '南美沿海国家',
-        'PER': '南美文明古国',
-        'COL': '南美沿海国家',
-        'VEN': '南美石油国家',
-        'CHL': '南美狭长国家',
-        'ARG': '南美大国',
-        'AFG': '中亚内陆国家',
-        'IRQ': '中东石油国家',
-        'SYR': '中东文明古国',
-        'LBN': '中东沿海国家',
-        'JOR': '中东内陆国家',
-        'YEM': '阿拉伯半岛国家',
-        'OMN': '阿拉伯半岛国家',
-        'QAT': '中东天然气大国',
-        'KWT': '中东石油国家',
-        'BHR': '中东岛国',
-        'CYP': '地中海岛国',
-        'GRC': '欧洲文明古国',
-        'ALB': '巴尔干国家',
-        'MKD': '巴尔干国家',
-        'SRB': '巴尔干国家',
-        'MNE': '巴尔干国家',
-        'BIH': '巴尔干国家',
-        'HRV': '巴尔干国家',
-        'SVN': '巴尔干国家',
-        'HUN': '中欧国家',
-        'SVK': '中欧国家',
-        'CZE': '中欧国家',
-        'ROU': '东欧国家',
-        'BGR': '巴尔干国家',
-        'MDA': '东欧国家',
-        'UKR': '东欧大国',
-        'BLR': '东欧国家',
-        'LTU': '波罗的海国家',
-        'LVA': '波罗的海国家',
-        'EST': '波罗的海国家',
-        'FIN': '北欧国家',
-        'DNK': '北欧国家',
-        'ISL': '北欧岛国',
-        'IRL': '西欧岛国',
-        'PRT': '伊比利亚国家',
-        'LUX': '西欧小国',
-        'LIE': '中欧小国',
-        'MCO': '欧洲小国',
-        'AND': '欧洲小国',
-        'SMR': '欧洲小国',
-        'VAT': '欧洲小国',
-        'MLT': '地中海岛国',
-        'GIB': '英国海外领地',
-        'IMN': '英国皇家属地',
-        'JEY': '英国皇家属地',
-        'GGY': '英国皇家属地',
-        'FRO': '丹麦自治领地',
-        'GRL': '丹麦自治领地',
-        'SJM': '挪威属地',
-        'BVT': '挪威属地',
-        'ATF': '法国海外领地',
-        'IOT': '英国海外领地',
-        'SHN': '英国海外领地',
-        'PCN': '英国海外领地',
-        'BMU': '英国海外领地',
-        'CYM': '英国海外领地',
-        'VGB': '英国海外领地',
-        'AIA': '英国海外领地',
-        'MSR': '英国海外领地',
-        'TCA': '英国海外领地',
-        'ABW': '荷兰自治领地',
-        'CUW': '荷兰自治领地',
-        'SXM': '荷兰自治领地',
-        'MAF': '法国海外领地',
-        'BLM': '法国海外领地',
-        'MTQ': '法国海外领地',
-        'GLP': '法国海外领地',
-        'DOM': '加勒比国家',
-        'HTI': '加勒比国家',
-        'JAM': '加勒比国家',
-        'BRB': '加勒比国家',
-        'GRD': '加勒比国家',
-        'LCA': '加勒比国家',
-        'VCT': '加勒比国家',
-        'ATG': '加勒比国家',
-        'DMA': '加勒比国家',
-        'KNA': '加勒比国家',
-        'TTO': '加勒比国家'
-    };
-    
-    return countryInfo[countryCode] || '';
-}
+
 
 // 显示国家详情
 function showCountryDetails(countryName, countryCode) {
@@ -985,7 +816,6 @@ function showCountryDetails(countryName, countryCode) {
     content.innerHTML = `
         <h2 style="margin-bottom: 20px; color: #4a90e2;">${countryName}</h2>
         <p style="margin-bottom: 15px; color: #cccccc;">国家代码: ${countryCode}</p>
-        <p style="margin-bottom: 20px; color: #cccccc;">${getCountryInfo(countryCode) || '暂无详细信息'}</p>
         <button class="close-btn" style="
             background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
             color: white;
