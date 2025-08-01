@@ -56,7 +56,10 @@
       function render() {
         var now = new Date();
         // 北京时间 = UTC+8
-        var bj = new Date(now.getTime() + (8 - now.getTimezoneOffset() / 60) * 3600000);
+        //var bj = new Date(now.getTime() + (8 - now.getTimezoneOffset() / 60) * 3600000);
+
+        var bj = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+        console.log(bj);
         var y = bj.getUTCFullYear();
         var m = pad(bj.getUTCMonth() + 1);
         var d = pad(bj.getUTCDate());
