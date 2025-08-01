@@ -128,18 +128,7 @@
 
 
 
-/* 热力图图例样式 */
-.heatmap-legend {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    z-index: 10;
-}
+/* 热力图图例样式已删除 */
 
 /* 排名表格样式 */
 .top-countries-table {
@@ -280,13 +269,7 @@
         gap: 4px;
     }
     
-    .heatmap-legend {
-        position: static;
-        margin-bottom: 10px;
-        padding: 10px;
-    }
-    
-    /* 热力条已删除 */
+    /* 热力图图例已删除 */
     
     .top-countries-table {
         margin-top: 15px;
@@ -349,11 +332,7 @@
     
     /* 热力条已删除 */
     
-    .heatmap-legend {
-        position: static;
-        margin-bottom: 10px;
-        padding: 10px;
-    }
+    /* 热力图图例已删除 */
 }
 
 /* 横屏模式优化 */
