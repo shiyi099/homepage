@@ -493,14 +493,53 @@ function showHeatmapLegend(countryData) {
 }
 
 // 显示排名前5的国家/地区表格
+// 创建空的table占位符
+function createEmptyTable() {
+    const tableContainer = document.createElement('div');
+    tableContainer.className = 'top-countries-table';
+    
+    const tableTitle = document.createElement('h5');
+    tableTitle.textContent = 'Top Countries/Regions by Viewers';
+    
+    const table = document.createElement('table');
+    
+    // 创建表头
+    const thead = document.createElement('thead');
+    thead.innerHTML = `
+        <tr>
+            <th>Country/Region</th>
+            <th>Viewers</th>
+        </tr>
+    `;
+    
+    // 创建空的表体
+    const tbody = document.createElement('tbody');
+    tbody.innerHTML = `
+        <tr><td colspan="2" style="text-align: center; color: #888;">Loading data...</td></tr>
+    `;
+    
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    tableContainer.appendChild(tableTitle);
+    tableContainer.appendChild(table);
+    
+    return tableContainer;
+}
+
 function showTopCountriesTable(countryData) {
     const svgElement = document.querySelector('.datamap');
     if (!svgElement) return;
     
     // 检查是否已经存在表格
-    const existingTable = svgElement.querySelector('.top-countries-table');
-    if (existingTable) {
-        existingTable.remove();
+    let existingTable = svgElement.querySelector('.top-countries-table');
+    
+    // 如果没有数据，创建一个空的table占位符
+    if (!countryData || Object.keys(countryData).length === 0) {
+        if (!existingTable) {
+            existingTable = createEmptyTable();
+            svgElement.appendChild(existingTable);
+        }
+        return;
     }
     
     // 将数据转换为数组并排序
@@ -510,9 +549,16 @@ function showTopCountriesTable(countryData) {
     
     if (sortedCountries.length === 0) return;
     
-    const tableContainer = document.createElement('div');
-    tableContainer.className = 'top-countries-table';
-    // 移除内联样式，使用CSS类
+    // 如果table不存在，创建一个新的
+    if (!existingTable) {
+        existingTable = document.createElement('div');
+        existingTable.className = 'top-countries-table';
+        svgElement.appendChild(existingTable);
+        console.log('Table created and appended to SVG');
+    }
+    
+    // 清空现有内容
+    existingTable.innerHTML = '';
     
     const tableTitle = document.createElement('h5');
     tableTitle.textContent = 'Top Countries/Regions by Viewers';
@@ -543,11 +589,8 @@ function showTopCountriesTable(countryData) {
     
     table.appendChild(thead);
     table.appendChild(tbody);
-    tableContainer.appendChild(tableTitle);
-    tableContainer.appendChild(table);
-    
-    // 插入到SVG容器内部
-    svgElement.appendChild(tableContainer);
+    existingTable.appendChild(tableTitle);
+    existingTable.appendChild(table);
 }
 
 // 显示错误信息
@@ -589,6 +632,9 @@ function initWorldMap() {
     // 创建工具提示元素
     const tooltip = createTooltip();
     document.body.appendChild(tooltip);
+
+    // 初始化创建table（即使没有数据）
+    showTopCountriesTable({});
 
     // 获取所有国家路径
     const countries = svg.querySelectorAll('.datamaps-subunit');
