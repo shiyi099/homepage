@@ -624,8 +624,6 @@ function initWorldMap() {
         });
     });
 
-    // 添加地图控制功能
-    addMapControls();
 }
 
 // 处理触摸事件
@@ -966,89 +964,9 @@ function showCountryDetails(countryName, countryCode) {
 }
 
 // 添加地图控制功能
-function addMapControls() {
-    const mapSection = document.querySelector('.world-map-section');
-    if (!mapSection) return;
-    
-    // 创建控制按钮容器
-    const controlsContainer = document.createElement('div');
-    controlsContainer.className = 'map-controls';
-    controlsContainer.style.cssText = `
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 15px;
-    `;
-    
-    // 重置按钮
-    const resetBtn = createControlButton('重置地图', 'icon-refresh', () => {
-        const countries = document.querySelectorAll('.datamaps-subunit');
-        countries.forEach(country => {
-            country.classList.remove('active', 'highlight');
-        });
-    });
-    
-    // 高亮按钮
-    const highlightBtn = createControlButton('高亮显示', 'icon-star', () => {
-        const countries = document.querySelectorAll('.datamaps-subunit');
-        const randomCountry = countries[Math.floor(Math.random() * countries.length)];
-        countries.forEach(country => country.classList.remove('highlight'));
-        randomCountry.classList.add('highlight');
-    });
-    
-    // 缩放按钮
-    const zoomBtn = createControlButton('放大', 'icon-zoom-in', () => {
-        const svg = document.querySelector('.datamap');
-        if (svg) {
-            svg.style.transform = 'scale(1.2)';
-        }
-    });
-    
-    controlsContainer.appendChild(resetBtn);
-    controlsContainer.appendChild(highlightBtn);
-    controlsContainer.appendChild(zoomBtn);
-    
-    mapSection.appendChild(controlsContainer);
-}
 
-// 创建控制按钮
-function createControlButton(text, iconClass, onClick) {
-    const button = document.createElement('button');
-    button.className = 'map-btn';
-    button.style.cssText = `
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 20px;
-        background: linear-gradient(135deg, #333333 0%, #555555 100%);
-        color: white;
-        border: 1px solid #666666;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    `;
-    
-    button.innerHTML = `<i class="${iconClass}"></i>${text}`;
-    button.addEventListener('click', onClick);
-    
-    // 悬停效果
-    button.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-2px)';
-        this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.5)';
-        this.style.background = 'linear-gradient(135deg, #444444 0%, #666666 100%)';
-    });
-    
-    button.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-        this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.3)';
-        this.style.background = 'linear-gradient(135deg, #333333 0%, #555555 100%)';
-    });
-    
-    return button;
-}
+
+
 
 // 添加键盘快捷键
 document.addEventListener('keydown', function(e) {
@@ -1056,12 +974,6 @@ document.addEventListener('keydown', function(e) {
         // ESC键关闭所有弹窗
         const popups = document.querySelectorAll('.country-details-popup, .map-tooltip');
         popups.forEach(popup => popup.remove());
-        
-        // 移除所有激活状态
-        const countries = document.querySelectorAll('.datamaps-subunit');
-        countries.forEach(country => {
-            country.classList.remove('active', 'highlight');
-        });
     }
 });
 
