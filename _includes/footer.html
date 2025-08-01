@@ -46,22 +46,27 @@
       <a href="https://analytics.google.com/" target="_blank" rel="noopener" style="margin-left: 4px; vertical-align: middle;">
         <img src="https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg" alt="GA" width="16" height="16" style="display:inline-block;vertical-align:middle;"/>.
       </a>
-      <span id="time" style="margin-left: 8px;"></span>
+      <span id="beijing-time" style="margin-left: 8px;"></span>
     </span>
     <script>
     (function updateBeijingTime() {
       function pad(n) { return n < 10 ? '0' + n : n; }
       function render() {
-        // 北京时间 = UTC+8
         var now = new Date();
-        var ct = now.getTime() + now.getTimezoneOffset() * 60000;
-        var y = ct.getUTCFullYear();
-        var m = pad(ct.getUTCMonth() + 1);
-        var d = pad(ct.getUTCDate());
-        var h = pad(ct.getUTCHours());
-        var min = pad(ct.getUTCMinutes());
-        var s = pad(ct.getUTCSeconds());
-        document.getElementById('time').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s ;//+ '('+ city + ', ' + country +')';
+        // 北京时间 = UTC+8
+        //var bj = new Date(now.getTime() + (8 - now.getTimezoneOffset() / 60) * 3600000);
+
+        //var bj = new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Shanghai' }).format(now);
+        var now = new Date();
+        var utc = now.getTime() + now.getTimezoneOffset() * 60000;
+        var bj = new Date(utc + 8 * 3600000);
+        var y = bj.getUTCFullYear();
+        var m = pad(bj.getUTCMonth() + 1);
+        var d = pad(bj.getUTCDate());
+        var h = pad(bj.getUTCHours());
+        var min = pad(bj.getUTCMinutes());
+        var s = pad(bj.getUTCSeconds());
+        document.getElementById('beijing-time').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)';
       }
       render();
       setInterval(render, 1000);
