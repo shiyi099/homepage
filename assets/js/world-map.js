@@ -5,11 +5,140 @@ document.addEventListener('DOMContentLoaded', function() {
     initWorldMap();
     // 加载热力图数据
     loadHeatmapData();
+    // 初始化响应式调整
+    initResponsiveAdjustment();
 });
 
 // 全局变量存储热力图数据
 let heatmapData = {};
 let maxUsers = 0;
+let resizeTimeout = null;
+
+// 初始化响应式调整
+function initResponsiveAdjustment() {
+    // 监听窗口大小变化
+    window.addEventListener('resize', handleWindowResize);
+    
+    // 监听设备方向变化
+    window.addEventListener('orientationchange', handleOrientationChange);
+    
+    // 初始调整
+    adjustMapForScreenSize();
+}
+
+// 处理窗口大小变化
+function handleWindowResize() {
+    // 防抖处理
+    if (resizeTimeout) {
+        clearTimeout(resizeTimeout);
+    }
+    
+    resizeTimeout = setTimeout(() => {
+        adjustMapForScreenSize();
+        updateTooltipPosition();
+    }, 250);
+}
+
+// 处理设备方向变化
+function handleOrientationChange() {
+    setTimeout(() => {
+        adjustMapForScreenSize();
+        updateTooltipPosition();
+    }, 500);
+}
+
+// 根据屏幕大小调整地图
+function adjustMapForScreenSize() {
+    const mapContainer = document.querySelector('.world-map-container');
+    const svg = document.querySelector('.datamap');
+    
+    if (!mapContainer || !svg) return;
+    
+    const containerWidth = mapContainer.clientWidth;
+    const containerHeight = mapContainer.clientHeight;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    
+    // 计算最佳缩放比例
+    let scale = 1;
+    let maxWidth = containerWidth;
+    let maxHeight = containerHeight;
+    
+    // 根据屏幕宽度调整
+    if (windowWidth < 480) {
+        // 小屏手机
+        scale = 0.85;
+        maxWidth = windowWidth - 20;
+        maxHeight = 200;
+    } else if (windowWidth < 768) {
+        // 手机
+        scale = 0.9;
+        maxWidth = windowWidth - 30;
+        maxHeight = 250;
+    } else if (windowWidth < 1200) {
+        // 平板
+        scale = 1;
+        maxWidth = Math.min(600, windowWidth - 40);
+        maxHeight = 300;
+    } else {
+        // 桌面
+        scale = 1;
+        maxWidth = Math.min(800, windowWidth - 60);
+        maxHeight = 400;
+    }
+    
+    // 横屏模式特殊处理
+    if (windowWidth > windowHeight && windowHeight < 600) {
+        scale = 0.8;
+        maxHeight = 180;
+    }
+    
+    // 应用调整
+    svg.style.maxWidth = maxWidth + 'px';
+    svg.style.maxHeight = maxHeight + 'px';
+    svg.style.transform = `scale(${scale})`;
+    
+    // 调整容器高度
+    mapContainer.style.minHeight = maxHeight + 'px';
+    
+    // 更新SVG视口
+    updateSVGViewport();
+}
+
+// 更新SVG视口
+function updateSVGViewport() {
+    const svg = document.querySelector('.datamap');
+    if (!svg) return;
+    
+    const container = document.querySelector('.world-map-container');
+    const containerWidth = container.clientWidth;
+    const containerHeight = container.clientHeight;
+    
+    // 设置SVG视口
+    svg.setAttribute('viewBox', '0 0 345 278');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    
+    // 确保SVG在容器中居中
+    svg.style.display = 'block';
+    svg.style.margin = '0 auto';
+}
+
+// 更新工具提示位置
+function updateTooltipPosition() {
+    const tooltip = document.querySelector('.map-tooltip');
+    if (tooltip && tooltip.classList.contains('show')) {
+        // 重新计算工具提示位置
+        const activeElement = document.querySelector('.datamaps-subunit:hover');
+        if (activeElement) {
+            const rect = activeElement.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+            
+            tooltip.style.left = (rect.left + scrollLeft + rect.width / 2) + 'px';
+            tooltip.style.top = (rect.top + scrollTop - 40) + 'px';
+        }
+    }
+}
 
 // 从API获取数据并绘制热力图
 async function loadHeatmapData() {
@@ -487,10 +616,33 @@ function initWorldMap() {
         country.addEventListener('click', function(e) {
             handleCountryClick(e, this);
         });
+        
+        // 触摸设备支持
+        country.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            handleCountryTouch(e, this, tooltip);
+        });
     });
 
     // 添加地图控制功能
     addMapControls();
+}
+
+// 处理触摸事件
+function handleCountryTouch(e, country, tooltip) {
+    const touch = e.touches[0];
+    const touchEvent = {
+        target: country,
+        clientX: touch.clientX,
+        clientY: touch.clientY
+    };
+    
+    handleCountryHover(touchEvent, country, tooltip);
+    
+    // 3秒后自动隐藏工具提示
+    setTimeout(() => {
+        handleCountryLeave(touchEvent, country, tooltip);
+    }, 3000);
 }
 
 // 创建工具提示
@@ -749,8 +901,6 @@ function getCountryName(countryCode) {
     
     return countryNames[countryCode] || countryCode;
 }
-
-
 
 // 显示国家详情
 function showCountryDetails(countryName, countryCode) {
