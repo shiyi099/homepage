@@ -23,6 +23,7 @@
 
 .world-map-container {
     display: flex;
+    flex-direction: column;
     margin: 15px 0;
     padding: 15px;
     background: rgba(255, 255, 255, 0.05);
@@ -36,12 +37,13 @@
     position: relative;
     min-height: 400px;
     gap: 20px;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 /* SVG容器 */
 .svg-container {
-    flex: 0 0 70%;
+    width: 100%;
+    margin-bottom: 20px;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -51,7 +53,7 @@
 
 /* Table容器 */
 .table-container {
-    flex: 0 0 30%;
+    width: 100%;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -212,7 +214,16 @@
 /* 响应式设计 - 桌面端 */
 @media (min-width: 1200px) {
     .world-map-container {
-        padding: 20px;
+        flex-direction: column;
+    }
+    
+    .svg-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .table-container {
+        width: 100%;
     }
     
     .datamap {
@@ -228,16 +239,16 @@
 /* 响应式设计 - 平板端 */
 @media (max-width: 1199px) and (min-width: 768px) {
     .world-map-container {
-        padding: 15px;
-        flex-direction: row;
+        flex-direction: column;
     }
     
     .svg-container {
-        flex: 0 0 70%;
+        width: 100%;
+        margin-bottom: 20px;
     }
     
     .table-container {
-        flex: 0 0 30%;
+        width: 100%;
     }
     
     .datamap {
