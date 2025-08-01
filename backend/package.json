@@ -1,11 +1,12 @@
 {
-    "name": "backend-api",
-    "version": "1.0.0",
-    "dependencies": {
-        "@google-analytics/data": "^1.0.0"
-    },
-    "engines": {
-      "node": "22.x"
-    }
+  "name": "backend-api",
+  "version": "1.0.0",
+  "dependencies": {
+      "@google-analytics/data": "^4.0.0"
+  },
+  "engines": {
+    "node": "22.x"
+  }
 }
+
   
