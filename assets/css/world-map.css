@@ -22,7 +22,7 @@
 }
 
 .world-map-container {
-    display: block;
+    display: flex;
     margin: 15px 0;
     padding: 15px;
     background: rgba(255, 255, 255, 0.05);
@@ -35,22 +35,21 @@
     overflow: hidden;
     position: relative;
     min-height: 400px;
+    gap: 20px;
+    align-items: flex-start;
 }
 
 /* SVG地图样式 - 响应式设计 */
 .datamap {
-    max-width: 100%;
+    flex: 0 0 65%;
     height: auto;
     background: #000000;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     /* 响应式SVG */
-    width: 100%;
-    height: auto;
     min-height: 200px;
     transition: all 0.3s ease;
     transform-origin: center center;
-    margin: 0 auto;
     display: block;
 }
 
@@ -132,17 +131,14 @@
 
 /* 排名表格样式 */
 .top-countries-table {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100%;
+    flex: 0 0 35%;
     padding: 15px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-sizing: border-box;
     overflow-y: auto;
+    max-height: 400px;
 }
 
 .top-countries-table h5 {
@@ -213,22 +209,21 @@
 @media (max-width: 1199px) and (min-width: 768px) {
     .world-map-container {
         padding: 15px;
+        flex-direction: row;
     }
     
     .datamap {
-        max-width: 100%;
+        flex: 0 0 65%;
         min-height: 300px;
     }
     
     .top-countries-table {
-        width: 250px;
+        flex: 0 0 35%;
     }
     
     .world-map-section h4 {
         font-size: 18px;
     }
-    
-
 }
 
 /* 响应式设计 - 手机端 */
@@ -241,16 +236,18 @@
     .world-map-container {
         padding: 10px;
         margin: 10px 0;
+        flex-direction: column;
     }
     
     .datamap {
-        max-width: 100%;
+        flex: 1 1 100%;
         min-height: 250px;
         transform: scale(0.9);
     }
     
     .top-countries-table {
-        display: none;
+        flex: 1 1 100%;
+        margin-top: 15px;
     }
     
     .world-map-section h4 {
@@ -306,15 +303,18 @@
     
     .world-map-container {
         padding: 8px;
+        flex-direction: column;
     }
     
     .datamap {
+        flex: 1 1 100%;
         min-height: 200px;
         transform: scale(0.85);
     }
     
     .top-countries-table {
-        display: none;
+        flex: 1 1 100%;
+        margin-top: 10px;
     }
     
     .world-map-section h4 {
