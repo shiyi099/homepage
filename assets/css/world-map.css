@@ -129,7 +129,7 @@
 
 /* 热力图图例样式 */
 .heatmap-legend {
-    margin-top: 15px;
+    margin-bottom: 15px;
     padding: 15px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
@@ -206,7 +206,7 @@
     }
     
     .heatmap-legend {
-        margin-top: 10px;
+        margin-bottom: 10px;
         padding: 10px;
     }
     
