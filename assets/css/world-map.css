@@ -39,9 +39,25 @@
     align-items: flex-start;
 }
 
+/* SVG容器 */
+.svg-container {
+    flex: 0 0 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Table容器 */
+.table-container {
+    flex: 0 0 30%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
 /* SVG地图样式 - 响应式设计 */
 .datamap {
-    flex: 1;
+    width: 100%;
     height: auto;
     background: #000000;
     border-radius: 8px;
@@ -51,7 +67,6 @@
     transition: all 0.3s ease;
     transform-origin: center center;
     display: block;
-    margin-right: 20px;
 }
 
 /* 国家路径样式 */
@@ -132,7 +147,7 @@
 
 /* 排名表格样式 */
 .top-countries-table {
-    flex: 0 0 280px;
+    width: 100%;
     padding: 15px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
@@ -213,14 +228,16 @@
         flex-direction: row;
     }
     
-    .datamap {
-        flex: 1;
-        min-height: 300px;
-        margin-right: 20px;
+    .svg-container {
+        flex: 0 0 70%;
     }
     
-    .top-countries-table {
-        flex: 0 0 280px;
+    .table-container {
+        flex: 0 0 30%;
+    }
+    
+    .datamap {
+        min-height: 300px;
     }
     
     .world-map-section h4 {
@@ -242,16 +259,23 @@
         align-items: center;
     }
     
+    .svg-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .table-container {
+        width: 100%;
+    }
+    
     .datamap {
         width: 100%;
         min-height: 250px;
         transform: scale(0.9);
-        margin-bottom: 20px;
     }
     
     .top-countries-table {
         width: 100%;
-        margin-top: 0;
     }
     
     .world-map-section h4 {
@@ -311,16 +335,23 @@
         align-items: center;
     }
     
+    .svg-container {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .table-container {
+        width: 100%;
+    }
+    
     .datamap {
         width: 100%;
         min-height: 200px;
         transform: scale(0.85);
-        margin-bottom: 15px;
     }
     
     .top-countries-table {
         width: 100%;
-        margin-top: 0;
     }
     
     .world-map-section h4 {
