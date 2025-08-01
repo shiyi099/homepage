@@ -66,8 +66,16 @@
         var h = pad(((bj.getUTCHours())+8)%24);
         var min = pad(bj.getUTCMinutes());
         var s = pad(bj.getUTCSeconds());
-        var loc = window.ipLocationMap.currentVisitor.country + ', ' + window.ipLocationMap.currentVisitor.city;
-        document.getElementById('beijing-time-currentregion').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)' ;//+ '  [' + loc + ']';
+        // 获取国家/地区
+        var loc = '';
+        if (
+          window.ipLocationMap &&
+          window.ipLocationMap.currentVisitor &&
+          window.ipLocationMap.currentVisitor.country
+        ) {
+          loc = '  ['+ window.ipLocationMap.currentVisitor.country + ', ' + window.ipLocationMap.currentVisitor.city+ ']';
+        }
+        document.getElementById('beijing-time-currentregion').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)' + loc ;
       }
       render();
       setInterval(render, 1000);
