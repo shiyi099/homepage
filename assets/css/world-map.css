@@ -288,7 +288,7 @@
     
     .heatmap-legend > div {
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
     }
     
     .heatmap-legend > div > div:first-child {
@@ -297,9 +297,8 @@
     }
     
     .heatmap-legend > div > div:last-child {
-        height: 80px;
-        margin-left: 0;
         margin-top: 5px;
+        font-size: 10px;
     }
     
     .top-countries-table {
@@ -367,8 +366,7 @@
     }
     
     .heatmap-legend > div > div:last-child {
-        height: 60px;
-        font-size: 10px;
+        font-size: 9px;
     }
     
     .heatmap-legend {
