@@ -54,6 +54,18 @@
     transition: all 0.3s ease;
     transform-origin: center center;
     display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+/* SVG hover效果 */
+.datamap:hover {
+    background: #000000;
+}
+
+.datamap:hover .datamaps-subunit {
+    fill: #000000 !important;
+    stroke: #333333 !important;
 }
 
 /* 国家路径样式 */
@@ -134,22 +146,40 @@
 
 /* 排名表格样式 */
 .top-countries-table {
-    width: 100%;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
     box-sizing: border-box;
     overflow-y: auto;
-    max-height: 400px;
+    max-height: 80%;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* 显示table的条件 */
+.datamap:hover .top-countries-table {
+    opacity: 1;
+    visibility: visible;
 }
 
 .top-countries-table h5 {
     color: white;
     font-weight: bold;
     margin-bottom: 15px;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .top-countries-table table {
@@ -157,6 +187,9 @@
     border-collapse: collapse;
     color: white;
     font-size: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .top-countries-table th {
