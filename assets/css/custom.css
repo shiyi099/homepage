@@ -33,65 +33,7 @@ a:hover .bio-photo {
 
 
 
-/* 访客分析区域样式 */
-.visitor-analytics-section {
-    margin: 20px 0;
-    padding: 20px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    border-radius: 12px;
-    border: 1px solid #404040;
-    color: #ffffff;
-}
 
-/* 访客统计显示 */
-.visitor-stats-display {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-    border-radius: 8px;
-    color: white;
-    border: 1px solid #333333;
-}
-
-.visitor-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
-    justify-items: center;
-}
-
-.visitor-stats .stat-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 15px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 6px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    min-width: 160px;
-    justify-content: center;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.visitor-stats .stat-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.visitor-stats .stat-item i {
-    font-size: 18px;
-    color: #fff;
-}
-
-.visitor-stats .stat-item span {
-    font-weight: 500;
-    color: #fff;
-    font-size: 14px;
-}
 
 
 
@@ -192,6 +134,7 @@ a:hover .bio-photo {
     color: #ffffff;
 }
 
+ 
 /* 响应式设计 */
 @media (max-width: 768px) {
     .visitor-stats {
