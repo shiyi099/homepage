@@ -1,0 +1,225 @@
+/* 自定义样式文件 */
+
+/* 头像旋转动画效果 */
+.bio-photo {
+    transition: transform 0.6s ease-in-out;
+    border-radius: 50%; /* 确保头像是圆形 */
+}
+
+.bio-photo:hover {
+    transform: rotate(360deg);
+}
+
+/* 可选：添加一些额外的悬停效果 */
+.bio-photo:hover {
+    transform: rotate(360deg);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+}
+
+/* 确保动画在离开时平滑恢复 */
+.bio-photo {
+    transition: transform 0.6s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 如果头像在链接中，确保整个链接区域都有效果 */
+a .bio-photo {
+    transition: transform 0.6s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+a:hover .bio-photo {
+    transform: rotate(360deg);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+/* 访客分析区域样式 */
+.visitor-analytics-section {
+    margin: 20px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 12px;
+    border: 1px solid #404040;
+    color: #ffffff;
+}
+
+/* 访客统计显示 */
+.visitor-stats-display {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    border-radius: 8px;
+    color: white;
+    border: 1px solid #333333;
+}
+
+.visitor-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    justify-items: center;
+}
+
+.visitor-stats .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 160px;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.visitor-stats .stat-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.visitor-stats .stat-item i {
+    font-size: 18px;
+    color: #fff;
+}
+
+.visitor-stats .stat-item span {
+    font-weight: 500;
+    color: #fff;
+    font-size: 14px;
+}
+
+
+
+/* 地图区域样式 */
+.map-section {
+    margin-bottom: 20px;
+}
+
+.map-section h4 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.visitor-map-container {
+    height: 300px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid #404040;
+    background: #ffffff;
+}
+
+/* 地图控制按钮 */
+.map-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.map-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #333333 0%, #555555 100%);
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.map-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #444444 0%, #666666 100%);
+    border-color: #888888;
+}
+
+.map-btn.clear-btn {
+    background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+    border-color: #cc0000;
+}
+
+.map-btn.clear-btn:hover {
+    background: linear-gradient(135deg, #a52a2a 0%, #cc0000 100%);
+    border-color: #ff0000;
+}
+
+.map-btn i {
+    font-size: 16px;
+}
+
+/* 访客弹窗样式 */
+.visitor-popup {
+    padding: 10px;
+    min-width: 200px;
+    background: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #404040;
+    border-radius: 6px;
+}
+
+.visitor-popup h4 {
+    margin: 0 0 10px 0;
+    color: #ffffff;
+    font-size: 16px;
+    border-bottom: 1px solid #404040;
+    padding-bottom: 5px;
+}
+
+.visitor-popup p {
+    margin: 5px 0;
+    font-size: 12px;
+    color: #cccccc;
+}
+
+.visitor-popup strong {
+    color: #ffffff;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .visitor-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .visitor-stats .stat-item {
+        min-width: 140px;
+        font-size: 12px;
+    }
+    
+    .map-controls {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .visitor-map-container {
+        height: 250px;
+    }
+    
+    .map-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+} 

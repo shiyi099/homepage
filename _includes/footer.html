@@ -1,0 +1,73 @@
+<h6>&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}.
+  Published with <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>,
+  powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>,
+  based on the <a href="https://mademistakes.com/" rel="nofollow">Minimal Mistakes</a> theme.
+  Source code for this website can be found <a href="https://github.com/GuangLun2000/GuangLun2000.github.io" rel="nofollow">here (GuangLun2000)</a>.
+
+  <!-- 访客统计和位置信息 -->
+  <div class="visitor-analytics-section">
+    
+    <!-- 访客统计 -->
+    {% if site.ipinfo %}
+    <div id="visitor-stats" class="visitor-stats-display">
+      <div class="visitor-stats">
+        <div class="stat-item">
+          <i class="icon-users"></i>
+          <span>总访客: 加载中...</span>
+        </div>
+        <div class="stat-item">
+          <i class="icon-eye"></i>
+          <span>总访问: 加载中...</span>
+        </div>
+        <div class="stat-item">
+          <i class="icon-location"></i>
+          <span>当前IP: 获取中...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 访客地图 -->
+    <div class="map-section">
+      <h4>访客地理分布</h4>
+      <div id="visitor-map" class="visitor-map-container"></div>
+      <div class="map-controls">
+        <button onclick="window.ipLocationMap && window.ipLocationMap.refreshMap()" class="map-btn">
+          <i class="icon-refresh"></i> 刷新地图
+        </button>
+        <button onclick="window.ipLocationMap && window.ipLocationMap.clearData()" class="map-btn clear-btn">
+          <i class="icon-trash"></i> 清除数据
+        </button>
+      </div>
+    </div>
+    {% endif %}
+
+  <!-- <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=tGZ_4852x6Mm-PPomoo98e4y_CI8D9TmioGTO03Daik"></script> -->
+  
+</h6>
+
+
+<!-- KaTeX Auto-render -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        // 配置选项
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "\\[", right: "\\]", display: true}
+        ],
+        throwOnError: false,
+        errorColor: '#cc0000',
+        macros: {
+            "\\RR": "\\mathbb{R}",
+            "\\NN": "\\mathbb{N}",
+            "\\ZZ": "\\mathbb{Z}",
+            "\\QQ": "\\mathbb{Q}",
+            "\\CC": "\\mathbb{C}"
+        }
+    });
+});
+</script>
+
+<!-- Lastly modified by Hanlin CAI in 2023/03/16 -->
