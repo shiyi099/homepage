@@ -59,14 +59,13 @@
         //var bj = new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Shanghai' }).format(now);
         var now = new Date();
         var utc = now.getTime() + now.getTimezoneOffset() * 60000;
-        var bj = new Date(utc + 8 * 3600000);
         var y = bj.getUTCFullYear();
         var m = pad(bj.getUTCMonth() + 1);
         var d = pad(bj.getUTCDate());
         var h = pad(bj.getUTCHours());
         var min = pad(bj.getUTCMinutes());
         var s = pad(bj.getUTCSeconds());
-        document.getElementById('beijing-time').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)';
+        document.getElementById('time').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + loc;
       }
       render();
       setInterval(render, 1000);
