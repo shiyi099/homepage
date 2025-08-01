@@ -576,11 +576,17 @@ function showTopCountriesTable(countryData) {
     const tableContainer = document.createElement('div');
     tableContainer.className = 'top-countries-table';
     tableContainer.style.cssText = `
-        margin-top: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100%;
         padding: 15px;
         background: rgba(255, 255, 255, 0.05);
         border-radius: 8px;
         border: 1px solid rgba(255, 255, 255, 0.1);
+        box-sizing: border-box;
+        overflow-y: auto;
     `;
     
     const tableTitle = document.createElement('h5');
@@ -611,14 +617,14 @@ function showTopCountriesTable(countryData) {
                 border-bottom: 1px solid rgba(255, 255, 255, 0.2);
                 font-weight: bold;
                 color: #4a90e2;
-            ">国家/地区</th>
+            ">Country/Region</th>
             <th style="
                 padding: 10px;
                 text-align: right;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.2);
                 font-weight: bold;
                 color: #4a90e2;
-            ">活跃用户</th>
+            ">Active Users</th>
         </tr>
     `;
     
@@ -661,7 +667,7 @@ function showTopCountriesTable(countryData) {
     tableContainer.appendChild(tableTitle);
     tableContainer.appendChild(table);
     
-    // 插入到容器底部
+    // 插入到容器内部
     mapContainer.appendChild(tableContainer);
 }
 
