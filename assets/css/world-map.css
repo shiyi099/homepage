@@ -168,19 +168,13 @@
 }
 
 /* 显示table的条件 */
-.datamap:hover .top-countries-table {
+.datamap:hover ~ .top-countries-table,
+.datamap:hover + .top-countries-table {
     opacity: 1 !important;
     visibility: visible !important;
 }
 
-/* 调试：临时显示table */
-.top-countries-table {
-    /* 临时注释掉隐藏，用于调试 */
-    /* opacity: 0; */
-    /* visibility: hidden; */
-    opacity: 1;
-    visibility: visible;
-}
+
 
 .top-countries-table h5 {
     color: white;
