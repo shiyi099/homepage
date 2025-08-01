@@ -22,9 +22,7 @@
 }
 
 .world-map-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     margin: 15px 0;
     padding: 15px;
     background: rgba(255, 255, 255, 0.05);
@@ -52,6 +50,8 @@
     min-height: 200px;
     transition: all 0.3s ease;
     transform-origin: center center;
+    margin: 0 auto;
+    display: block;
 }
 
 /* 国家路径样式 */
@@ -130,21 +130,30 @@
 
 /* 热力图图例样式 */
 .heatmap-legend {
-    margin-bottom: 15px;
-    padding: 15px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 10px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
+    z-index: 10;
 }
 
 /* 排名表格样式 */
 .top-countries-table {
-    margin-top: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
     padding: 15px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .top-countries-table h5 {
@@ -202,7 +211,7 @@
     }
     
     .datamap {
-        max-width: 800px;
+        max-width: calc(100% - 280px);
         min-height: 400px;
     }
     
@@ -272,6 +281,7 @@
     }
     
     .heatmap-legend {
+        position: static;
         margin-bottom: 10px;
         padding: 10px;
     }
@@ -359,6 +369,12 @@
     .heatmap-legend > div > div:last-child {
         height: 60px;
         font-size: 10px;
+    }
+    
+    .heatmap-legend {
+        position: static;
+        margin-bottom: 10px;
+        padding: 10px;
     }
 }
 
