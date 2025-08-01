@@ -188,26 +188,8 @@ class IPLocationMap {
 
     // 更新显示
     updateDisplay() {
-        this.updateVisitorStats();
-    }
-
-    // 更新访客统计
-    updateVisitorStats() {
-        const statsElement = document.getElementById('visitor-stats');
-        if (statsElement && this.currentVisitor) {
-            statsElement.innerHTML = `
-                <div class="visitor-stats">
-                    <div class="stat-item">
-                        <i class="icon-location"></i>
-                        <span>当前IP: ${this.currentVisitor.ip}</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="icon-map-marker"></i>
-                        <span>位置: ${this.currentVisitor.city}, ${this.currentVisitor.country}</span>
-                    </div>
-                </div>
-            `;
-        }
+        // 保留底层功能，但不更新UI显示
+        console.log('IP Location data updated:', this.currentVisitor);
     }
 
     // 刷新地图
