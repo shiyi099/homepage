@@ -410,7 +410,7 @@ function applyHeatmapToMap(data) {
     updateTooltipContent();
     
     // 显示热力图图例
-    showHeatmapLegend();
+    showHeatmapLegend(data);
 }
 
 // 生成热力图颜色
@@ -487,7 +487,7 @@ function updateTooltipContent() {
 }
 
 // 显示热力图图例
-function showHeatmapLegend() {
+function showHeatmapLegend(countryData) {
     const mapContainer = document.querySelector('.world-map-container');
     if (!mapContainer) return;
     
@@ -557,6 +557,120 @@ function showHeatmapLegend() {
     
     // 插入到容器的顶部
     mapContainer.insertBefore(legend, mapContainer.firstChild);
+    
+    // 显示排名前5的国家/地区表格
+    showTopCountriesTable(countryData);
+}
+
+// 显示排名前5的国家/地区表格
+function showTopCountriesTable(countryData) {
+    const mapContainer = document.querySelector('.world-map-container');
+    if (!mapContainer) return;
+    
+    // 检查是否已经存在表格
+    const existingTable = mapContainer.querySelector('.top-countries-table');
+    if (existingTable) {
+        existingTable.remove();
+    }
+    
+    // 将数据转换为数组并排序
+    const sortedCountries = Object.entries(countryData)
+        .sort(([,a], [,b]) => b - a)
+        .slice(0, Math.min(5, Object.keys(countryData).length));
+    
+    if (sortedCountries.length === 0) return;
+    
+    const tableContainer = document.createElement('div');
+    tableContainer.className = 'top-countries-table';
+    tableContainer.style.cssText = `
+        margin-top: 20px;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    `;
+    
+    const tableTitle = document.createElement('h5');
+    tableTitle.style.cssText = `
+        color: white;
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-size: 16px;
+        text-align: center;
+    `;
+    const actualCount = sortedCountries.length;
+    tableTitle.textContent = `活跃用户排名前${actualCount}`;
+    
+    const table = document.createElement('table');
+    table.style.cssText = `
+        width: 100%;
+        border-collapse: collapse;
+        color: white;
+        font-size: 14px;
+    `;
+    
+    // 创建表头
+    const thead = document.createElement('thead');
+    thead.innerHTML = `
+        <tr>
+            <th style="
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                font-weight: bold;
+                color: #4a90e2;
+            ">国家/地区</th>
+            <th style="
+                padding: 10px;
+                text-align: right;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                font-weight: bold;
+                color: #4a90e2;
+            ">活跃用户</th>
+        </tr>
+    `;
+    
+    // 创建表体
+    const tbody = document.createElement('tbody');
+    sortedCountries.forEach(([countryCode, users], index) => {
+        const countryName = getCountryName(countryCode);
+        const row = document.createElement('tr');
+        row.style.cssText = `
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        `;
+        
+        // 为前三名添加特殊样式
+        if (index < 3) {
+            row.style.background = 'rgba(74, 144, 226, 0.1)';
+        }
+        
+        row.innerHTML = `
+            <td style="
+                padding: 10px;
+                text-align: left;
+                font-weight: ${index < 3 ? 'bold' : 'normal'};
+            ">
+                ${index + 1}. ${countryName}
+            </td>
+            <td style="
+                padding: 10px;
+                text-align: right;
+                font-weight: ${index < 3 ? 'bold' : 'normal'};
+                color: ${index < 3 ? '#4a90e2' : '#cccccc'};
+            ">
+                ${users.toLocaleString()}
+            </td>
+        `;
+        tbody.appendChild(row);
+    });
+    
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    tableContainer.appendChild(tableTitle);
+    tableContainer.appendChild(table);
+    
+    // 插入到容器底部
+    mapContainer.appendChild(tableContainer);
 }
 
 // 显示错误信息
