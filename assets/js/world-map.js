@@ -508,23 +508,15 @@ function showHeatmapLegend(countryData) {
         text-align: center;
     `;
     
-    const legendTitle = document.createElement('div');
-    legendTitle.style.cssText = `
-        color: white;
-        font-weight: bold;
-        margin-bottom: 10px;
-        font-size: 14px;
-    `;
-    legendTitle.textContent = '访客活跃度热力图';
-    
     const legendBar = document.createElement('div');
     legendBar.style.cssText = `
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         align-items: center;
         margin: 10px 0;
-        height: 20px;
-        background: linear-gradient(to right, rgb(240, 249, 255), rgb(189, 215, 231), rgb(107, 174, 214), rgb(49, 130, 189), rgb(8, 81, 156), rgb(255, 255, 204), rgb(255, 237, 160), rgb(254, 217, 118), rgb(254, 178, 76), rgb(253, 141, 60), rgb(252, 78, 42), rgb(227, 26, 28), rgb(189, 0, 38), rgb(128, 0, 38));
+        width: 20px;
+        height: 100px;
+        background: linear-gradient(to bottom, rgb(240, 249, 255), rgb(189, 215, 231), rgb(107, 174, 214), rgb(49, 130, 189), rgb(8, 81, 156), rgb(255, 255, 204), rgb(255, 237, 160), rgb(254, 217, 118), rgb(254, 178, 76), rgb(253, 141, 60), rgb(252, 78, 42), rgb(227, 26, 28), rgb(189, 0, 38), rgb(128, 0, 38));
         border-radius: 4px;
         position: relative;
     `;
@@ -532,28 +524,29 @@ function showHeatmapLegend(countryData) {
     const legendLabels = document.createElement('div');
     legendLabels.style.cssText = `
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         font-size: 11px;
         color: #cccccc;
-        margin-top: 5px;
+        margin-left: 8px;
+        height: 100px;
     `;
     legendLabels.innerHTML = `
-        <span>低</span>
-        <span>高</span>
+        <span>high</span>
+        <span>low</span>
     `;
     
-    const legendStats = document.createElement('div');
-    legendStats.style.cssText = `
-        font-size: 12px;
-        color: #cccccc;
-        margin-top: 8px;
+    const legendContainer = document.createElement('div');
+    legendContainer.style.cssText = `
+        display: flex;
+        align-items: center;
+        justify-content: center;
     `;
-    legendStats.textContent = `最高活跃用户: ${maxUsers} 人`;
     
-    legend.appendChild(legendTitle);
-    legend.appendChild(legendBar);
-    legend.appendChild(legendLabels);
-    legend.appendChild(legendStats);
+    legendContainer.appendChild(legendBar);
+    legendContainer.appendChild(legendLabels);
+    
+    legend.appendChild(legendContainer);
     
     // 插入到容器的顶部
     mapContainer.insertBefore(legend, mapContainer.firstChild);
@@ -598,8 +591,7 @@ function showTopCountriesTable(countryData) {
         font-size: 16px;
         text-align: center;
     `;
-    const actualCount = sortedCountries.length;
-    tableTitle.textContent = `活跃用户排名前${actualCount}`;
+    tableTitle.textContent = '';
     
     const table = document.createElement('table');
     table.style.cssText = `
