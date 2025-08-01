@@ -46,7 +46,7 @@
       <a href="https://analytics.google.com/" target="_blank" rel="noopener" style="margin-left: 4px; vertical-align: middle;">
         <img src="https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg" alt="GA" width="16" height="16" style="display:inline-block;vertical-align:middle;"/>.
       </a>
-      <span id="beijing-time" style="margin-left: 8px;"></span>
+      <span id="beijing-time-currentregion" style="margin-left: 8px;"></span>
     </span>
     <script>
     (function updateBeijingTime() {
@@ -66,8 +66,8 @@
         var h = pad((bj.getUTCHours()+8)%24);
         var min = pad(bj.getUTCMinutes());
         var s = pad(bj.getUTCSeconds());
-        
-        document.getElementById('beijing-time').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)';
+        var loc = window.ipLocationMap.currentVisitor.country + ', ' + window.ipLocationMap.currentVisitor.city;
+        document.getElementById('beijing-time-currentregion').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)' + '  [' + loc + ']';
       }
       render();
       setInterval(render, 1000);
@@ -75,7 +75,7 @@
     </script>
     <span id="beijing-time" style="margin-left: 8px;"></span>
     <span id="ip-loc" style="margin-left: 8px;"></span>
-      var loc = window.ipLocationMap.currentVisitor.country + ', ' + window.ipLocationMap.currentVisitor.city;
+      document.getElementById('beijing-time').textContent 
     </span>
   </div>
 
