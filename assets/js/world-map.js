@@ -494,11 +494,11 @@ function showHeatmapLegend(countryData) {
 
 // 显示排名前5的国家/地区表格
 function showTopCountriesTable(countryData) {
-    const mapContainer = document.querySelector('.world-map-container');
-    if (!mapContainer) return;
+    const svgElement = document.querySelector('.datamap');
+    if (!svgElement) return;
     
     // 检查是否已经存在表格
-    const existingTable = mapContainer.querySelector('.top-countries-table');
+    const existingTable = svgElement.querySelector('.top-countries-table');
     if (existingTable) {
         existingTable.remove();
     }
@@ -512,56 +512,19 @@ function showTopCountriesTable(countryData) {
     
     const tableContainer = document.createElement('div');
     tableContainer.className = 'top-countries-table';
-    tableContainer.style.cssText = `
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 250px;
-        height: 100%;
-        padding: 15px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-sizing: border-box;
-        overflow-y: auto;
-    `;
+    // 移除内联样式，使用CSS类
     
     const tableTitle = document.createElement('h5');
-    tableTitle.style.cssText = `
-        color: white;
-        font-weight: bold;
-        margin-bottom: 15px;
-        font-size: 16px;
-        text-align: center;
-    `;
-    tableTitle.textContent = '';
+    tableTitle.textContent = 'Top Countries/Regions by Viewers';
     
     const table = document.createElement('table');
-    table.style.cssText = `
-        width: 100%;
-        border-collapse: collapse;
-        color: white;
-        font-size: 14px;
-    `;
     
     // 创建表头
     const thead = document.createElement('thead');
     thead.innerHTML = `
         <tr>
-            <th style="
-                padding: 10px;
-                text-align: left;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                font-weight: bold;
-                color: #4a90e2;
-            ">Country/Region</th>
-            <th style="
-                padding: 10px;
-                text-align: right;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                font-weight: bold;
-                color: #4a90e2;
-            ">Viewers</th>
+            <th>Country/Region</th>
+            <th>Viewers</th>
         </tr>
     `;
     
@@ -570,31 +533,10 @@ function showTopCountriesTable(countryData) {
     sortedCountries.forEach(([countryCode, users], index) => {
         const countryName = getCountryName(countryCode);
         const row = document.createElement('tr');
-        row.style.cssText = `
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        `;
-        
-        // 为前三名添加特殊样式
-        if (index < 3) {
-            row.style.background = 'rgba(74, 144, 226, 0.1)';
-        }
         
         row.innerHTML = `
-            <td style="
-                padding: 10px;
-                text-align: left;
-                font-weight: ${index < 3 ? 'bold' : 'normal'};
-            ">
-                ${index + 1}. ${countryName}
-            </td>
-            <td style="
-                padding: 10px;
-                text-align: right;
-                font-weight: ${index < 3 ? 'bold' : 'normal'};
-                color: ${index < 3 ? '#4a90e2' : '#cccccc'};
-            ">
-                ${users.toLocaleString()}
-            </td>
+            <td>${index + 1}. ${countryName}</td>
+            <td>${users.toLocaleString()}</td>
         `;
         tbody.appendChild(row);
     });
@@ -604,8 +546,8 @@ function showTopCountriesTable(countryData) {
     tableContainer.appendChild(tableTitle);
     tableContainer.appendChild(table);
     
-    // 插入到容器内部
-    mapContainer.appendChild(tableContainer);
+    // 插入到SVG容器内部
+    svgElement.appendChild(tableContainer);
 }
 
 // 显示错误信息
