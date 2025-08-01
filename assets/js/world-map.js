@@ -624,7 +624,7 @@ function showTopCountriesTable(countryData) {
                 border-bottom: 1px solid rgba(255, 255, 255, 0.2);
                 font-weight: bold;
                 color: #4a90e2;
-            ">Active Users</th>
+            ">Viewers</th>
         </tr>
     `;
     
