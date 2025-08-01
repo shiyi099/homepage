@@ -41,7 +41,7 @@
 
 /* SVG地图样式 - 响应式设计 */
 .datamap {
-    flex: 0 0 65%;
+    flex: 1;
     height: auto;
     background: #000000;
     border-radius: 8px;
@@ -51,6 +51,7 @@
     transition: all 0.3s ease;
     transform-origin: center center;
     display: block;
+    margin-right: 20px;
 }
 
 /* 国家路径样式 */
@@ -131,7 +132,7 @@
 
 /* 排名表格样式 */
 .top-countries-table {
-    flex: 0 0 35%;
+    flex: 0 0 280px;
     padding: 15px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
@@ -213,12 +214,13 @@
     }
     
     .datamap {
-        flex: 0 0 65%;
+        flex: 1;
         min-height: 300px;
+        margin-right: 20px;
     }
     
     .top-countries-table {
-        flex: 0 0 35%;
+        flex: 0 0 280px;
     }
     
     .world-map-section h4 {
