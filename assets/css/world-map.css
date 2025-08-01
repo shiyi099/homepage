@@ -286,20 +286,7 @@
         padding: 10px;
     }
     
-    .heatmap-legend > div {
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    .heatmap-legend > div > div:first-child {
-        width: 15px;
-        height: 80px;
-    }
-    
-    .heatmap-legend > div > div:last-child {
-        margin-top: 5px;
-        font-size: 10px;
-    }
+    /* 热力条已删除 */
     
     .top-countries-table {
         margin-top: 15px;
@@ -360,14 +347,7 @@
         padding: 4px 6px;
     }
     
-    .heatmap-legend > div > div:first-child {
-        width: 12px;
-        height: 60px;
-    }
-    
-    .heatmap-legend > div > div:last-child {
-        font-size: 9px;
-    }
+    /* 热力条已删除 */
     
     .heatmap-legend {
         position: static;
