@@ -63,16 +63,20 @@
         var y = bj.getUTCFullYear();
         var m = pad(bj.getUTCMonth() + 1);
         var d = pad(bj.getUTCDate());
-        var h = pad(bj.getUTCHours());
+        var h = pad((bj.getUTCHours()+8)%24);
         var min = pad(bj.getUTCMinutes());
         var s = pad(bj.getUTCSeconds());
-        var loc = window.ipLocationMap.currentVisitor.country + ', ' + window.ipLocationMap.currentVisitor.city;
-        document.getElementById('beijing-time').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s ;//+ ' ('+ loc + ')';
+        
+        document.getElementById('beijing-time').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)';
       }
       render();
       setInterval(render, 1000);
     })();
     </script>
+    <span id="beijing-time" style="margin-left: 8px;"></span>
+    <span id="ip-loc" style="margin-left: 8px;"></span>
+      var loc = window.ipLocationMap.currentVisitor.country + ', ' + window.ipLocationMap.currentVisitor.city;
+    </span>
   </div>
 
   <!-- 引入世界地图样式表和脚本 -->
