@@ -530,14 +530,14 @@ function showTopCountriesTable(countryData) {
     const svgElement = document.querySelector('.datamap');
     if (!svgElement) return;
     
-    // 检查是否已经存在表格
-    let existingTable = svgElement.querySelector('.top-countries-table');
+    // 检查是否已经存在表格（在SVG的父容器中查找）
+    let existingTable = svgElement.parentElement.querySelector('.top-countries-table');
     
     // 如果没有数据，创建一个空的table占位符
     if (!countryData || Object.keys(countryData).length === 0) {
         if (!existingTable) {
             existingTable = createEmptyTable();
-            svgElement.appendChild(existingTable);
+            svgElement.parentElement.appendChild(existingTable);
         }
         return;
     }
@@ -553,8 +553,8 @@ function showTopCountriesTable(countryData) {
     if (!existingTable) {
         existingTable = document.createElement('div');
         existingTable.className = 'top-countries-table';
-        svgElement.appendChild(existingTable);
-        console.log('Table created and appended to SVG');
+        svgElement.parentElement.appendChild(existingTable);
+        console.log('Table created and appended to SVG parent');
     }
     
     // 清空现有内容
