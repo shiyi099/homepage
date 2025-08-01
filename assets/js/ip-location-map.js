@@ -195,19 +195,8 @@ class IPLocationMap {
     updateVisitorStats() {
         const statsElement = document.getElementById('visitor-stats');
         if (statsElement && this.currentVisitor) {
-            const totalVisitors = this.visitorData.length;
-            const totalVisits = this.visitorData.reduce((sum, v) => sum + v.visitCount, 0);
-
             statsElement.innerHTML = `
                 <div class="visitor-stats">
-                    <div class="stat-item">
-                        <i class="icon-users"></i>
-                        <span>总访客: ${totalVisitors}</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="icon-eye"></i>
-                        <span>总访问: ${totalVisits}</span>
-                    </div>
                     <div class="stat-item">
                         <i class="icon-location"></i>
                         <span>当前IP: ${this.currentVisitor.ip}</span>
