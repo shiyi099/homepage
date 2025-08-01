@@ -42,17 +42,21 @@
 /* SVG容器 */
 .svg-container {
     flex: 0 0 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 /* Table容器 */
 .table-container {
     flex: 0 0 30%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 /* SVG地图样式 - 响应式设计 */
@@ -261,7 +265,7 @@
     
     .svg-container {
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     
     .table-container {
@@ -337,7 +341,7 @@
     
     .svg-container {
         width: 100%;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
     
     .table-container {
