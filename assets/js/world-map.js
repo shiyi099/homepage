@@ -510,13 +510,9 @@ function showHeatmapLegend(countryData) {
     
     const legendBar = document.createElement('div');
     legendBar.style.cssText = `
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 10px 0;
         width: 20px;
         height: 100px;
-        background: linear-gradient(to bottom, rgb(240, 249, 255), rgb(189, 215, 231), rgb(107, 174, 214), rgb(49, 130, 189), rgb(8, 81, 156), rgb(255, 255, 204), rgb(255, 237, 160), rgb(254, 217, 118), rgb(254, 178, 76), rgb(253, 141, 60), rgb(252, 78, 42), rgb(227, 26, 28), rgb(189, 0, 38), rgb(128, 0, 38));
+        background: linear-gradient(to bottom, rgb(128, 0, 38), rgb(189, 0, 38), rgb(227, 26, 28), rgb(252, 78, 42), rgb(253, 141, 60), rgb(254, 178, 76), rgb(254, 217, 118), rgb(255, 237, 160), rgb(255, 255, 204), rgb(8, 81, 156), rgb(49, 130, 189), rgb(107, 174, 214), rgb(189, 215, 231), rgb(240, 249, 255));
         border-radius: 4px;
         position: relative;
     `;
@@ -525,26 +521,23 @@ function showHeatmapLegend(countryData) {
     legendLabels.style.cssText = `
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        align-items: center;
         font-size: 11px;
         color: #cccccc;
-        margin-left: 8px;
-        height: 100px;
+        margin-top: 5px;
     `;
     legendLabels.innerHTML = `
-        <span>high</span>
-        <span>low</span>
+        <span style="margin-bottom: 5px;">high</span>
+        <span style="margin-top: 5px;">low</span>
     `;
     
     const legendContainer = document.createElement('div');
     legendContainer.style.cssText = `
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
     `;
-    
-    legendContainer.appendChild(legendBar);
-    legendContainer.appendChild(legendLabels);
     
     legend.appendChild(legendContainer);
     
