@@ -23,8 +23,7 @@
 
 .world-map-container {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin: 15px 0;
     padding: 15px;
@@ -199,7 +198,6 @@
 @media (min-width: 1200px) {
     .world-map-container {
         padding: 20px;
-        flex-direction: column;
     }
     
     .datamap {
@@ -216,7 +214,6 @@
 @media (max-width: 1199px) and (min-width: 768px) {
     .world-map-container {
         padding: 15px;
-        flex-direction: column;
     }
     
     .datamap {
@@ -241,7 +238,6 @@
     .world-map-container {
         padding: 10px;
         margin: 10px 0;
-        flex-direction: column;
     }
     
     .datamap {
@@ -269,6 +265,22 @@
     .heatmap-legend {
         margin-bottom: 10px;
         padding: 10px;
+    }
+    
+    .heatmap-legend > div {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .heatmap-legend > div > div:first-child {
+        width: 15px;
+        height: 80px;
+    }
+    
+    .heatmap-legend > div > div:last-child {
+        height: 80px;
+        margin-left: 0;
+        margin-top: 5px;
     }
     
     .top-countries-table {
@@ -306,7 +318,6 @@
     
     .world-map-container {
         padding: 8px;
-        flex-direction: column;
     }
     
     .datamap {
@@ -326,6 +337,16 @@
         font-size: 10px;
         padding: 4px 6px;
     }
+    
+    .heatmap-legend > div > div:first-child {
+        width: 12px;
+        height: 60px;
+    }
+    
+    .heatmap-legend > div > div:last-child {
+        height: 60px;
+        font-size: 10px;
+    }
 }
 
 /* 横屏模式优化 */
@@ -337,7 +358,6 @@
     
     .world-map-container {
         padding: 8px;
-        flex-direction: column;
     }
     
     .datamap {
