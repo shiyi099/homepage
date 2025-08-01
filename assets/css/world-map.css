@@ -23,7 +23,8 @@
 
 .world-map-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     margin: 15px 0;
     padding: 15px;
@@ -198,6 +199,7 @@
 @media (min-width: 1200px) {
     .world-map-container {
         padding: 20px;
+        flex-direction: column;
     }
     
     .datamap {
@@ -214,6 +216,7 @@
 @media (max-width: 1199px) and (min-width: 768px) {
     .world-map-container {
         padding: 15px;
+        flex-direction: column;
     }
     
     .datamap {
@@ -238,6 +241,7 @@
     .world-map-container {
         padding: 10px;
         margin: 10px 0;
+        flex-direction: column;
     }
     
     .datamap {
@@ -302,6 +306,7 @@
     
     .world-map-container {
         padding: 8px;
+        flex-direction: column;
     }
     
     .datamap {
@@ -332,6 +337,7 @@
     
     .world-map-container {
         padding: 8px;
+        flex-direction: column;
     }
     
     .datamap {
