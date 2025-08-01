@@ -39,13 +39,13 @@
 
 /* SVG地图样式 - 响应式设计 */
 .datamap {
-    max-width: calc(100% - 280px);
+    max-width: 100%;
     height: auto;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     /* 响应式SVG */
-    width: calc(100% - 280px);
+    width: 100%;
     height: auto;
     min-height: 200px;
     transition: all 0.3s ease;
@@ -200,7 +200,7 @@
     }
     
     .datamap {
-        max-width: calc(100% - 280px);
+        max-width: 100%;
         min-height: 400px;
     }
     
@@ -216,7 +216,7 @@
     }
     
     .datamap {
-        max-width: calc(100% - 280px);
+        max-width: 100%;
         min-height: 300px;
     }
     
