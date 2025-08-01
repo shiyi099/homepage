@@ -31,99 +31,80 @@
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    /* 响应式容器 */
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
-/* SVG地图样式 */
+/* SVG地图样式 - 响应式设计 */
 .datamap {
     max-width: 100%;
     height: auto;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    /* 响应式SVG */
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    transition: all 0.3s ease;
+    transform-origin: center center;
 }
 
-/* 国家路径基础样式 */
+/* 国家路径样式 */
 .datamaps-subunit {
     transition: all 0.3s ease;
     cursor: pointer;
-    stroke: #fdfdfd;
-    stroke-width: 1;
-    stroke-opacity: 1;
-    fill: rgb(221, 221, 221);
+    stroke: #ffffff;
+    stroke-width: 0.5;
+    stroke-opacity: 0.8;
 }
 
-/* 悬停效果 */
 .datamaps-subunit:hover {
     fill: #4a90e2 !important;
+    stroke-width: 1;
+    stroke-opacity: 1;
     transform: scale(1.02);
-    filter: brightness(1.2);
-    stroke: #ffffff;
-    stroke-width: 2;
-    z-index: 10;
+    filter: brightness(1.1);
 }
 
-/* 激活状态 */
 .datamaps-subunit.active {
     fill: #ff6b6b !important;
+    stroke-width: 2;
     stroke: #ffffff;
-    stroke-width: 3;
-    filter: drop-shadow(0 0 8px rgba(255, 107, 107, 0.6));
     animation: pulse 2s infinite;
 }
 
-/* 高亮状态 */
 .datamaps-subunit.highlight {
-    fill: #feca57 !important;
-    stroke: #ffffff;
+    fill: #ffd93d !important;
     stroke-width: 2;
-    filter: drop-shadow(0 0 6px rgba(254, 202, 87, 0.6));
+    stroke: #ffffff;
     animation: glow 1.5s ease-in-out infinite alternate;
 }
 
-/* 热力图激活状态 */
+/* 热力图活跃状态 */
 .datamaps-subunit.heatmap-active {
-    transition: all 0.5s ease;
     animation: heatmapPulse 3s ease-in-out infinite;
 }
 
-/* 脉冲动画 */
+/* 动画效果 */
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 0.8;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
-/* 发光动画 */
 @keyframes glow {
-    from {
-        filter: drop-shadow(0 0 6px rgba(254, 202, 87, 0.6));
-    }
-    to {
-        filter: drop-shadow(0 0 12px rgba(254, 202, 87, 0.8));
-    }
+    from { filter: brightness(1) drop-shadow(0 0 5px rgba(255, 217, 61, 0.5)); }
+    to { filter: brightness(1.2) drop-shadow(0 0 15px rgba(255, 217, 61, 0.8)); }
 }
 
-/* 热力图脉冲动画 */
 @keyframes heatmapPulse {
-    0% {
-        filter: brightness(1);
-    }
-    50% {
-        filter: brightness(1.1);
-    }
-    100% {
-        filter: brightness(1);
-    }
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.1); }
+    100% { filter: brightness(1); }
 }
 
 /* 工具提示样式 */
@@ -143,13 +124,16 @@
     transition: opacity 0.3s ease;
     max-width: 200px;
     word-wrap: break-word;
+    /* 响应式工具提示 */
+    font-size: clamp(10px, 2vw, 12px);
+    padding: clamp(6px, 1.5vw, 8px) clamp(8px, 2vw, 12px);
 }
 
 .map-tooltip.show {
     opacity: 1;
 }
 
-/* 地图控制按钮 */
+/* 地图控制按钮样式 */
 .map-controls {
     display: flex;
     justify-content: center;
@@ -180,10 +164,6 @@
     background: linear-gradient(135deg, #444444 0%, #666666 100%);
 }
 
-.map-btn:active {
-    transform: translateY(0);
-}
-
 /* 热力图图例样式 */
 .heatmap-legend {
     margin-top: 15px;
@@ -192,78 +172,54 @@
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
-    backdrop-filter: blur(10px);
 }
 
-.heatmap-legend div:first-child {
-    color: white;
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-
-/* 国家详情弹窗 */
-.country-details-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    backdrop-filter: blur(5px);
-}
-
-.country-details-popup > div {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    color: white;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #404040;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    text-align: center;
-}
-
-.country-details-popup h2 {
-    margin-bottom: 20px;
-    color: #4a90e2;
-}
-
-.country-details-popup p {
-    margin-bottom: 15px;
-    color: #cccccc;
-}
-
-.country-details-popup .close-btn {
-    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-.country-details-popup .close-btn:hover {
-    background: linear-gradient(135deg, #357abd 0%, #2c5aa0 100%);
-    transform: translateY(-1px);
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .world-map-section {
-        padding: 15px;
-        margin: 15px 0;
+/* 响应式设计 - 桌面端 */
+@media (min-width: 1200px) {
+    .world-map-container {
+        padding: 20px;
+    }
+    
+    .datamap {
+        max-width: 800px;
+        min-height: 400px;
     }
     
     .world-map-section h4 {
-        font-size: 16px;
+        font-size: 20px;
+    }
+}
+
+/* 响应式设计 - 平板端 */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .world-map-container {
+        padding: 15px;
+    }
+    
+    .datamap {
+        max-width: 600px;
+        min-height: 300px;
+    }
+    
+    .world-map-section h4 {
+        font-size: 18px;
+    }
+    
+    .map-controls {
+        gap: 12px;
+    }
+    
+    .map-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* 响应式设计 - 手机端 */
+@media (max-width: 767px) {
+    .world-map-section {
+        margin: 15px 0;
+        padding: 15px;
     }
     
     .world-map-container {
@@ -273,111 +229,129 @@
     
     .datamap {
         max-width: 100%;
-        height: auto;
-    }
-    
-    .map-controls {
-        gap: 10px;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .map-btn {
-        padding: 8px 16px;
-        font-size: 12px;
-        width: 100%;
-        max-width: 200px;
-    }
-    
-    .heatmap-legend {
-        padding: 10px;
-        margin-top: 10px;
-    }
-    
-    .country-details-popup > div {
-        padding: 20px;
-        margin: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .world-map-section {
-        padding: 10px;
-        margin: 10px 0;
+        min-height: 250px;
+        transform: scale(0.9);
     }
     
     .world-map-section h4 {
-        font-size: 14px;
+        font-size: 16px;
         margin-bottom: 10px;
+    }
+    
+    .map-controls {
+        gap: 8px;
+        margin-top: 10px;
+    }
+    
+    .map-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        gap: 4px;
+    }
+    
+    .heatmap-legend {
+        margin-top: 10px;
+        padding: 10px;
+    }
+    
+    /* 手机端优化工具提示 */
+    .map-tooltip {
+        max-width: 150px;
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+}
+
+/* 响应式设计 - 小屏手机 */
+@media (max-width: 480px) {
+    .world-map-section {
+        padding: 10px;
     }
     
     .world-map-container {
         padding: 8px;
-        margin: 8px 0;
     }
     
+    .datamap {
+        min-height: 200px;
+        transform: scale(0.85);
+    }
+    
+    .world-map-section h4 {
+        font-size: 14px;
+    }
+    
+    .map-controls {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+    }
+    
+    .map-btn {
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+    }
+    
+    /* 小屏手机优化工具提示 */
+    .map-tooltip {
+        max-width: 120px;
+        font-size: 10px;
+        padding: 4px 6px;
+    }
+}
+
+/* 横屏模式优化 */
+@media (orientation: landscape) and (max-height: 600px) {
+    .world-map-section {
+        margin: 10px 0;
+        padding: 10px;
+    }
+    
+    .world-map-container {
+        padding: 8px;
+    }
+    
+    .datamap {
+        min-height: 180px;
+        transform: scale(0.8);
+    }
+    
+    .world-map-section h4 {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    
+    .map-controls {
+        margin-top: 8px;
+        gap: 6px;
+    }
+    
+    .map-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+}
+
+/* 高分辨率屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .datamaps-subunit {
-        stroke-width: 0.5;
+        stroke-width: 0.25;
     }
     
     .datamaps-subunit:hover {
+        stroke-width: 0.5;
+    }
+    
+    .datamaps-subunit.active {
         stroke-width: 1;
-    }
-    
-    .map-tooltip {
-        font-size: 11px;
-        padding: 6px 10px;
-        max-width: 150px;
-    }
-    
-    .country-details-popup > div {
-        padding: 15px;
-        margin: 15px;
-    }
-    
-    .country-details-popup h2 {
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
-    
-    .country-details-popup p {
-        font-size: 12px;
-        margin-bottom: 10px;
     }
 }
 
 /* 深色主题支持 */
 @media (prefers-color-scheme: dark) {
-    .world-map-section {
-        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-        border-color: #333333;
-    }
-    
-    .world-map-container {
-        background: rgba(255, 255, 255, 0.03);
-        border-color: rgba(255, 255, 255, 0.05);
-    }
-    
     .datamap {
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    }
-}
-
-/* 高对比度模式支持 */
-@media (prefers-contrast: high) {
-    .datamaps-subunit {
-        stroke: #000000;
-        stroke-width: 2;
-    }
-    
-    .datamaps-subunit:hover {
-        stroke: #000000;
-        stroke-width: 3;
-    }
-    
-    .map-tooltip {
-        background: rgba(0, 0, 0, 1);
-        border: 2px solid #ffffff;
+        background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
     }
 }
 
@@ -385,8 +359,7 @@
 @media (prefers-reduced-motion: reduce) {
     .datamaps-subunit,
     .map-btn,
-    .map-tooltip,
-    .country-details-popup {
+    .map-tooltip {
         transition: none;
         animation: none;
     }
@@ -402,44 +375,20 @@
     }
 }
 
-/* 触摸设备优化 */
-@media (hover: none) and (pointer: coarse) {
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+    .datamaps-subunit {
+        stroke: #000000;
+        stroke-width: 1;
+    }
+    
     .datamaps-subunit:hover {
-        transform: none;
-        filter: none;
+        stroke: #000000;
+        stroke-width: 2;
     }
     
-    .map-btn:hover {
-        transform: none;
-    }
-    
-    .country-details-popup .close-btn:hover {
-        transform: none;
-    }
-}
-
-/* 打印样式 */
-@media print {
-    .world-map-section {
-        background: white;
-        color: black;
-        border: 1px solid #ccc;
-        box-shadow: none;
-    }
-    
-    .world-map-container {
-        background: white;
-        border: 1px solid #ccc;
-    }
-    
-    .datamap {
-        background: white;
-        box-shadow: none;
-    }
-    
-    .map-controls,
-    .heatmap-legend,
     .map-tooltip {
-        display: none;
+        background: #000000;
+        border: 2px solid #ffffff;
     }
 }
