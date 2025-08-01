@@ -36,17 +36,18 @@
     max-width: 100%;
     overflow: hidden;
     position: relative;
+    min-height: 400px;
 }
 
 /* SVG地图样式 - 响应式设计 */
 .datamap {
-    max-width: 100%;
+    max-width: calc(100% - 280px);
     height: auto;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     /* 响应式SVG */
-    width: 100%;
+    width: calc(100% - 280px);
     height: auto;
     min-height: 200px;
     transition: all 0.3s ease;
@@ -217,8 +218,12 @@
     }
     
     .datamap {
-        max-width: 600px;
+        max-width: calc(100% - 280px);
         min-height: 300px;
+    }
+    
+    .top-countries-table {
+        width: 250px;
     }
     
     .world-map-section h4 {
@@ -244,6 +249,10 @@
         max-width: 100%;
         min-height: 250px;
         transform: scale(0.9);
+    }
+    
+    .top-countries-table {
+        display: none;
     }
     
     .world-map-section h4 {
@@ -325,6 +334,10 @@
         transform: scale(0.85);
     }
     
+    .top-countries-table {
+        display: none;
+    }
+    
     .world-map-section h4 {
         font-size: 14px;
     }
@@ -363,6 +376,10 @@
     .datamap {
         min-height: 180px;
         transform: scale(0.8);
+    }
+    
+    .top-countries-table {
+        display: none;
     }
     
     .world-map-section h4 {
