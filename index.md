@@ -4,7 +4,7 @@ layout: page
 
 # About Me
 
-<img title="" src="https://shiyi099.github.io/Billion.github.io/images/Yi Shi.jpg" alt="" class="floatpic">
+<img title="" src="https://shiyi099.github.io/homepage/images/Yi Shi.jpg" alt="" class="floatpic">
 
 Here is **Yi Shi (Billion, 石义)**.<br>
 
