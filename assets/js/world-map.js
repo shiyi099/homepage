@@ -488,32 +488,7 @@ function updateTooltipContent() {
 
 // 显示热力图图例
 function showHeatmapLegend(countryData) {
-    const mapContainer = document.querySelector('.world-map-container');
-    if (!mapContainer) return;
-    
-    // 检查是否已经存在图例
-    const existingLegend = mapContainer.querySelector('.heatmap-legend');
-    if (existingLegend) {
-        existingLegend.remove();
-    }
-    
-    const legend = document.createElement('div');
-    legend.className = 'heatmap-legend';
-    legend.style.cssText = `
-        margin-bottom: 15px;
-        padding: 15px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        text-align: center;
-    `;
-    
-    // 热力条已删除
-    
-    // 插入到容器的顶部
-    mapContainer.insertBefore(legend, mapContainer.firstChild);
-    
-    // 显示排名前5的国家/地区表格
+    // 热力图图例容器已删除，直接显示排名表格
     showTopCountriesTable(countryData);
 }
 
