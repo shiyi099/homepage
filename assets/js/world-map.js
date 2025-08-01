@@ -508,38 +508,7 @@ function showHeatmapLegend(countryData) {
         text-align: center;
     `;
     
-    const legendBar = document.createElement('div');
-    legendBar.style.cssText = `
-        width: 20px;
-        height: 100px;
-        background: linear-gradient(to bottom, rgb(128, 0, 38), rgb(189, 0, 38), rgb(227, 26, 28), rgb(252, 78, 42), rgb(253, 141, 60), rgb(254, 178, 76), rgb(254, 217, 118), rgb(255, 237, 160), rgb(255, 255, 204), rgb(8, 81, 156), rgb(49, 130, 189), rgb(107, 174, 214), rgb(189, 215, 231), rgb(240, 249, 255));
-        border-radius: 4px;
-        position: relative;
-    `;
-    
-    const legendLabels = document.createElement('div');
-    legendLabels.style.cssText = `
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 11px;
-        color: #cccccc;
-        margin-top: 5px;
-    `;
-    legendLabels.innerHTML = `
-        <span style="margin-bottom: 5px;">high</span>
-        <span style="margin-top: 5px;">low</span>
-    `;
-    
-    const legendContainer = document.createElement('div');
-    legendContainer.style.cssText = `
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    `;
-    
-    legend.appendChild(legendContainer);
+    // 热力条已删除
     
     // 插入到容器的顶部
     mapContainer.insertBefore(legend, mapContainer.firstChild);
