@@ -63,11 +63,11 @@
         var y = bj.getUTCFullYear();
         var m = pad(bj.getUTCMonth() + 1);
         var d = pad(bj.getUTCDate());
-        var h = pad((bj.getUTCHours()+8)%24);
+        var h = pad(((bj.getUTCHours())+8)%24);
         var min = pad(bj.getUTCMinutes());
         var s = pad(bj.getUTCSeconds());
         var loc = window.ipLocationMap.currentVisitor.country + ', ' + window.ipLocationMap.currentVisitor.city;
-        document.getElementById('beijing-time-currentregion').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)' + '  [' + loc + ']';
+        document.getElementById('beijing-time-currentregion').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)' ;//+ '  [' + loc + ']';
       }
       render();
       setInterval(render, 1000);
