@@ -488,11 +488,11 @@ function updateTooltipContent() {
 
 // 显示热力图图例
 function showHeatmapLegend() {
-    const mapSection = document.querySelector('.world-map-section');
-    if (!mapSection) return;
+    const mapContainer = document.querySelector('.world-map-container');
+    if (!mapContainer) return;
     
     // 检查是否已经存在图例
-    const existingLegend = mapSection.querySelector('.heatmap-legend');
+    const existingLegend = mapContainer.querySelector('.heatmap-legend');
     if (existingLegend) {
         existingLegend.remove();
     }
@@ -500,7 +500,7 @@ function showHeatmapLegend() {
     const legend = document.createElement('div');
     legend.className = 'heatmap-legend';
     legend.style.cssText = `
-        margin-top: 15px;
+        margin-bottom: 15px;
         padding: 15px;
         background: rgba(255, 255, 255, 0.05);
         border-radius: 8px;
@@ -555,17 +555,18 @@ function showHeatmapLegend() {
     legend.appendChild(legendLabels);
     legend.appendChild(legendStats);
     
-    mapSection.appendChild(legend);
+    // 插入到容器的顶部
+    mapContainer.insertBefore(legend, mapContainer.firstChild);
 }
 
 // 显示错误信息
 function showErrorMessage(message) {
-    const mapSection = document.querySelector('.world-map-section');
-    if (!mapSection) return;
+    const mapContainer = document.querySelector('.world-map-container');
+    if (!mapContainer) return;
     
     const errorDiv = document.createElement('div');
     errorDiv.style.cssText = `
-        margin-top: 15px;
+        margin-bottom: 15px;
         padding: 10px;
         background: rgba(255, 0, 0, 0.1);
         border: 1px solid rgba(255, 0, 0, 0.3);
@@ -576,7 +577,8 @@ function showErrorMessage(message) {
     `;
     errorDiv.textContent = message;
     
-    mapSection.appendChild(errorDiv);
+    // 插入到容器的顶部
+    mapContainer.insertBefore(errorDiv, mapContainer.firstChild);
     
     // 5秒后自动移除错误信息
     setTimeout(() => {
