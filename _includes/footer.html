@@ -65,7 +65,7 @@
         var h = pad(bj.getUTCHours());
         var min = pad(bj.getUTCMinutes());
         var s = pad(bj.getUTCSeconds());
-        document.getElementById('time').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + '('+ city + ', ' + country +')';
+        document.getElementById('time').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s //+ '('+ city + ', ' + country +')';
       }
       render();
       setInterval(render, 1000);
