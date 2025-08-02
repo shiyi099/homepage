@@ -498,8 +498,8 @@ function createEmptyTable() {
     const tableContainer = document.createElement('div');
     tableContainer.className = 'top-countries-table';
     
-    const tableTitle = document.createElement('h5');
-    tableTitle.textContent = 'Top Countries/Regions by Viewers';
+    //const tableTitle = document.createElement('h5');
+    //tableTitle.textContent = 'Top Countries/Regions by Viewers';
     
     const table = document.createElement('table');
     
@@ -520,7 +520,7 @@ function createEmptyTable() {
     
     table.appendChild(thead);
     table.appendChild(tbody);
-    tableContainer.appendChild(tableTitle);
+    //tableContainer.appendChild(tableTitle);
     tableContainer.appendChild(table);
     
     return tableContainer;
