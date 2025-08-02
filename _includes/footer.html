@@ -77,7 +77,7 @@
         ) {
           loc = '  ['+ window.ipLocationMap.currentVisitor.country + ', ' + window.ipLocationMap.currentVisitor.city+ ']';
         }
-        document.getElementById('beijing-time-currentregion').textContent = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)' + loc ;
+        document.getElementById('beijing-time-currentregion').innerHTML = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)<br>' + "Viewer's Location: " + loc ;
       }
       render();
       setInterval(render, 1000);
