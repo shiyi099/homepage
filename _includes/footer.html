@@ -75,15 +75,15 @@
           window.ipLocationMap.currentVisitor &&
           window.ipLocationMap.currentVisitor.country
         ) {
-          loc = '<i class="fa-regular fa-map-location-dot" style="color: #ffffff;“></i>' +'  ['+ window.ipLocationMap.currentVisitor.country + ', ' + window.ipLocationMap.currentVisitor.city+ ']';
+          loc = '<i class="fa-solid fa-map-location-dot" style="color:#ffffff;“></i> ' +'  ['+ window.ipLocationMap.currentVisitor.country + ', ' + window.ipLocationMap.currentVisitor.city+ ']';
         }
-        document.getElementById('beijing-time-currentregion').innerHTML = '<i class="fa-regular fa-clock" style="color: #ffffff;“></i>' + y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)<br>' + "Viewer's Location: " + loc ;
+        document.getElementById('beijing-time-currentregion').innerHTML = '<i class="fa-solid fa-clock" style="color:#ffffff;“></i> ' + y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)<br>' + "Viewer's Location: " + loc ;
       }
       render();
       setInterval(render, 1000);
     })();
     </script>
-    <span id="beijing-time" style="margin-left: 8px;"></span>
+    <span id="beijing-time" style="margin-left: 0px;"></span>
   </div>
 
   <!-- 引入世界地图样式表和脚本 -->
