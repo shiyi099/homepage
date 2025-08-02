@@ -560,8 +560,8 @@ function showTopCountriesTable(countryData) {
     // 清空现有内容
     existingTable.innerHTML = '';
     
-    const tableTitle = document.createElement('h5');
-    tableTitle.textContent = 'Top Countries/Regions by Viewers';
+    //const tableTitle = document.createElement('h5');
+    //tableTitle.textContent = 'Top Countries/Regions by Viewers';
     
     const table = document.createElement('table');
     
