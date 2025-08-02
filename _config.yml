@@ -17,22 +17,22 @@ owner:
   avatar: avatar.ico
   # bio: Dream big, stay positive, work hard, and enjoy the journey.
   email: shiyi@mail.ccom.edu.cn
- # cv: https://caihanlin.com/file/CV-HanlinCAI.pdf
+  cv: https://shiyi099.github.io/homepage/Resume-YiShi-en.pdf
 
 
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
-  #twitter: lancecai2002
+  twitter: lancecai2002
   github: shiyi099
-  #linkedin: hanlincai
-  #scholar: https://scholar.google.com/citations?user=8igSoWgAAAAJ
-  #researchgate: https://www.researchgate.net/profile/Hanlin-Cai
-  #zhihu: https://www.zhihu.com/people/chlire
-  #xiaohongshu: 5c27848f0000000005030c6f
+  linkedin: hanlincai
+  scholar: https://scholar.google.com/citations?user=8igSoWgAAAAJ
+  researchgate: https://www.researchgate.net/profile/Hanlin-Cai
+  zhihu: https://www.zhihu.com/people/chlire
+  xiaohongshu: 5c27848f0000000005030c6f
   bilibili: 386647922
-  # facebook: caihanlin2002
+  facebook: caihanlin2002
   instagram: shiyi099
-  # lastfm:
-  # tumblr:
+  lastfm: 1
+  tumblr: 1
 
 
 # --------------------------------------------------
@@ -40,6 +40,8 @@ owner:
 # --------------------------------------------------
 #google_verify: "SkiyuGpJOKT74vv5GmXLvYXXDkXy4v8VWPtbelYz3Hs"
 # bing_verify: ""    # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+
+# Google Analytics 配置
 google_analytics: "G-YR5VB9NNV8"                                 # GA-4 property ID
 
 # IP地理位置服务配置
