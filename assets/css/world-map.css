@@ -5,20 +5,21 @@
 .world-map-section {
     margin: 20px 0;
     padding: 0px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    background: #000000;
     border-radius: 12px;
     border: 1px solid #404040;
-    color: #000000;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 1);
 }
 
 .world-map-section h4 {
     margin-bottom: 15px;
     font-size: 18px;
-    color: #000000;
+    background: #000000;
+    color: #ffffff;
     text-align: center;
     font-weight: 600;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
 }
 
 .world-map-container {
@@ -26,9 +27,9 @@
     flex-direction: column;
     margin: 0px 0;
     padding: 0px;
-    background: rgba(255, 255, 255, 0.05);
+    background: #ffffff;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     /* 响应式容器 */
     width: 100%;
