@@ -75,9 +75,9 @@
           window.ipLocationMap.currentVisitor &&
           window.ipLocationMap.currentVisitor.country
         ) {
-          loc = '  ['+ window.ipLocationMap.currentVisitor.country + ', ' + window.ipLocationMap.currentVisitor.city+ ']';
+          loc = '<i class="fa-regular fa-map-location-dot" style="color: #ffffff;“></i>' +'  ['+ window.ipLocationMap.currentVisitor.country + ', ' + window.ipLocationMap.currentVisitor.city+ ']';
         }
-        document.getElementById('beijing-time-currentregion').innerHTML = y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)<br>' + "Viewer's Location: " + loc ;
+        document.getElementById('beijing-time-currentregion').innerHTML = '<i class="fa-regular fa-clock" style="color: #ffffff;“></i>' + y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + s + ' (Beijing)<br>' + "Viewer's Location: " + loc ;
       }
       render();
       setInterval(render, 1000);
