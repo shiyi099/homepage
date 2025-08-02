@@ -589,7 +589,7 @@ function showTopCountriesTable(countryData) {
     
     table.appendChild(thead);
     table.appendChild(tbody);
-    existingTable.appendChild(tableTitle);
+    //existingTable.appendChild(tableTitle);
     existingTable.appendChild(table);
 }
 
