@@ -24,4 +24,4 @@ title: Awards
 
 - **Asia Pacific Mathematical Contest in Modeling (APMCM)** <br><a href="http://www.apmcm.org/certificate/result/19BDIJQRSZ45" style="text-decoration: none; color: #007acc;" onmouseover="this.style.color='#e91e63'" onmouseout="this.style.color='#007acc'" title="Click to query certificate! [APMCM]"><i>First Prize</i></a>*, (Undergraduate Group)* · Nov 2019.<br>
 
-- 8th **iPDM Cup** & Data Mining Challenge <br>*First Prize* · June 2019.<br>homepage
+- 8th **iPDM Cup** & Data Mining Challenge <br>*First Prize* · June 2019.<br>
