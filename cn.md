@@ -6,7 +6,9 @@ title: 主页中文版
 
 ## 关于我
 <br>
-<img title="" src="https://shiyi099.github.io/homepage/images/Yi Shi.jpg" alt="" class="floatpic">
+<a href="https://shiyi099.github.io/homepage/images/Yi Shi.jpg" target="_blank">
+    <img title="" src="https://shiyi099.github.io/homepage/images/Yi Shi.jpg" alt="" class="floatpic">
+</a>
 
 首先感谢您的阅读。我叫**石义 (Billion)**，1999年生，上海人。<br>
 
