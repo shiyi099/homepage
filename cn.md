@@ -5,6 +5,7 @@ title: 主页中文版
 ---
 
 ## 关于我
+
 <a href="https://shiyi099.github.io/homepage/images/Yi Shi.jpg" target="_blank">
     <img title="" src="https://shiyi099.github.io/homepage/images/Yi Shi.jpg" alt="" class="floatpic">
 </a>
@@ -15,7 +16,7 @@ title: 主页中文版
 
 近期我已于[中央音乐学院](https://zh.wikipedia.org/wiki/中央音乐学院)的[音乐人工智能与音乐信息科技系](https://www.ccom.edu.cn/jgk/jxdw/ylrgznyylxxkjx.htm)取得了硕士学位，师从[俞峰](https://baike.baidu.com/item/俞峰/2843997)教授和清华大学自动化系[戴琼海](https://baike.baidu.com/item/戴琼海)教授。我的研究领域主要包括音乐表演、多媒体技术、人工智能模型应用的交叉领域。<br>
 
-我最近的研究聚焦于弦乐器（比如大提琴和小提琴）的指法预测算法，通过多模态学习和交互系统（时序预测网络+PyQt&OpenGL可视化），提升音乐教学和表演分析的效率。同时我也在探索一些新的方向，比如空间音频与镜头运动的同步（多媒体方向），以及基于电影剧本情感为桥梁的音乐生成（大模型方向）。<br>
+我最近的研究聚焦于弦乐器（比如大提琴和小提琴）的指法预测算法，通过多模态学习和交互系统（时序预测网络+PyQt&OpenGL可视化），提升音乐教学和表演分析的效率。同时，我也在探索一些新的方向，比如空间音频与镜头运动的同步（多媒体方向），以及基于电影剧本情感为纽带的音乐生成（大模型方向）。<br>
 
 我一直致力于将艺术与科技相结合，也希望在未来的博士阶段继续从事跨学科研究，特别是在多模态人工智能、虚拟表演环境和创新的人机交互等方向。<br>
 
