@@ -5,7 +5,6 @@ title: 主页中文版
 ---
 
 ## 关于我
-
 <a href="https://shiyi099.github.io/homepage/images/Yi Shi.jpg" target="_blank">
     <img title="" src="https://shiyi099.github.io/homepage/images/Yi Shi.jpg" alt="" class="floatpic">
 </a>
