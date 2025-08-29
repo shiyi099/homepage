@@ -8,7 +8,7 @@ title: Publications
 
 ## Journal Paper
 
-- [Mask-RCNN-CHFNet: An Improved Deep Learning for 3D Reverse Modeling of Iron Tailings (SiO2) Real-time Melting Process](https://pdf.sciencedirectassets.com/270704/1-s2.0-S1110016824X00204/1-s2.0-S1110016824009578/main.pdf)<br><img title="" src="https://shiyi099.github.io/homepage/images/publications/Mask-RCNN-CHFNet.jpg" alt="" data-align="inline">Yuefang Sun, Xinghui Hao, **Yi Shi**, Zhaozhuang Guo, Aimin Yang$^\dag$<br>Submitted to *Alexandria Engineering Journal, Volume XXX, August 2025, Pages XX-XX*.<br>
+- [Mask-RCNN-CHFNet: An Improved Deep Learning for 3D Reverse Modeling of Iron Tailings (SiO2) Real-time Melting Process](https://www.sciencedirect.com/science/article/pii/S1110016824009578?ref=pdf_download&fr=RR-9&rr=976c0fb3e9066c47)<br><img title="" src="https://shiyi099.github.io/homepage/images/publications/Mask-RCNN-CHFNet.jpg" alt="" data-align="inline">Yuefang Sun, Xinghui Hao, **Yi Shi**, Zhaozhuang Guo, Aimin Yang$^\dag$<br>Submitted to *Alexandria Engineering Journal, Volume XXX, August 2025, Pages XX-XX*.<br>
 
 - [Audio Matters Too! Enhancing Markerless Motion Capture with Audio Signals for String Performance Capture](https://dl.acm.org/doi/abs/10.1145/3658235)<br><img title="" src="https://shiyi099.github.io/homepage/images/publications/SPD.jpg" alt="" data-align="inline">Yitong Jin$^\ast$, Zhiping Qiu$^\ast$, **Yi Shi**, Shuangpeng Sun, Chongwu Wang, Donghao Pan, Jiachen Zhao, Zhenghao Liang, Yuan Wang, Xiaobing Li, Feng Yu, Tao Yu$^\dag$, Qionghai Dai$^\dag$<br>Submitted to *ACM Transactions on Graphics (TOG), Volume 43, Issue 4*.<br>
 
