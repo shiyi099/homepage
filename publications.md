@@ -8,7 +8,7 @@ title: Publications
 
 ## Journal Paper
 
-- [Mask-RCNN-CHFNet: An Improved Deep Learning for 3D Reverse Modeling of Iron Tailings (SiO2) Real-time Melting Process](https://doi.org/10.1016/j.aej.2024.08.069)<br><img title="" src="https://shiyi099.github.io/homepage/images/publications/Mask-RCNN-CHFNet.jpg" alt="" data-align="inline">Yuefang Sun, Xinghui Hao, **Yi Shi**, Zhaozhuang Guo, Aimin Yang$^\dag$<br>Submitted to *Alexandria Engineering Journal, Volume XXX, August 2025, Pages XX-XX*.<br>
+- [Mask-RCNN-CHFNet: An Improved Deep Learning for 3D Reverse Modeling of Iron Tailings (SiO2) Real-time Melting Process](https://doi.org/10.1016/j.aej.2024.08.069)<br><img title="" src="https://shiyi099.github.io/homepage/images/publications/Mask-RCNN-CHFNet.jpg" alt="" data-align="inline">Yuefang Sun, Xinghui Hao, **Yi Shi**, Zhaozhuang Guo, Aimin Yang$^\dag$<br>Submitted to *Alexandria Engineering Journal, Volume XXX, August 2025, Pages XX-XX*.(Comming Soon)<br>
 
 - [Audio Matters Too! Enhancing Markerless Motion Capture with Audio Signals for String Performance Capture](https://dl.acm.org/doi/abs/10.1145/3658235)<br><img title="" src="https://shiyi099.github.io/homepage/images/publications/SPD.jpg" alt="" data-align="inline">Yitong Jin$^\ast$, Zhiping Qiu$^\ast$, **Yi Shi**, Shuangpeng Sun, Chongwu Wang, Donghao Pan, Jiachen Zhao, Zhenghao Liang, Yuan Wang, Xiaobing Li, Feng Yu, Tao Yu$^\dag$, Qionghai Dai$^\dag$<br>Submitted to *ACM Transactions on Graphics (TOG), Volume 43, Issue 4*.<br>
 
@@ -20,7 +20,7 @@ title: Publications
 
 ## Early Project
 
-- [Dynamic Supplementary Heat System for Blast Furnace Slag](https://newstest.ncst.edu.cn/col/1393558054724/2020/12/28/1609148866922.html)<br><img title="" src="https://shiyi099.github.io/homepage/images/publications/ChiLunTechnology.png" alt="" data-align="inline">**Yi Shi**, Xinghui Hao<br>
+- [Dynamic Supplementary Heat System for Blast Furnace Slag](https://newstest.ncst.edu.cn/col/1393558054724/2020/12/28/1609148866922.html)<br><img title="" src="https://shiyi099.github.io/homepage/images/publications/ChiLunTechnology.png" alt="" data-align="inline"> **Yi Shi**, Xinghui Hao<br>
   
   <br>
   This is an intelligent manufacturing project at the intersection of artificial intelligence and metallurgy. The goal is to detect high-temperature molten material in the melt pool (with $SiO_2$ used in experiments), and to estimate its volume from the area observed in 2D images. Based on this estimation, the system aims to monitor and calculate the real-time heat compensation required, ultimately contributing to energy conservation and emission reduction.<br>
