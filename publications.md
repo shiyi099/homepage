@@ -10,11 +10,11 @@ title: Publications
 
 - [Mask-RCNN-CHFNet: An Improved Deep Learning for 3D Reverse Modeling of Iron Tailings (SiO2) Real-time Melting Process](https://www.sciencedirect.com/science/article/pii/S1110016825009342)<br><img title="" src="https://shiyi099.github.io/homepage/images/publications/Mask-RCNN-CHFNet.jpg" alt="" data-align="inline">Yuefang Sun, Xinghui Hao, **Yi Shi**, Zhaozhuang Guo, Aimin Yang$^\dag$<br>Submitted to *Alexandria Engineering Journal, Volume 129, October 2025, Pages 1238-1257*.<br>
 
-- [Audio Matters Too! Enhancing Markerless Motion Capture with Audio Signals for String Performance Capture](https://dl.acm.org/doi/abs/10.1145/3658235)<br><img title="" src="https://shiyi099.github.io/homepage/images/publications/SPD.jpg" alt="" data-align="inline">Yitong Jin$^\ast$, Zhiping Qiu$^\ast$, **Yi Shi**, Shuangpeng Sun, Chongwu Wang, Donghao Pan, Jiachen Zhao, Zhenghao Liang, Yuan Wang, Xiaobing Li, Feng Yu, Tao Yu$^\dag$, Qionghai Dai$^\dag$<br>Submitted to *ACM Transactions on Graphics (TOG), Volume 43, Issue 4*.<br>
+- [Audio Matters Too! Enhancing Markerless Motion Capture with Audio Signals for String Performance Capture](https://dl.acm.org/doi/abs/10.1145/3658235)<br><img title="" src="https://shiyi099.github.io/homepage/images/publications/SPD.jpg" alt="" data-align="inline">Yitong Jin$^\ast$, Zhiping Qiu$^\ast$, **Yi Shi**, Shuangpeng Sun, Chongwu Wang, Donghao Pan, Jiachen Zhao, Zhenghao Liang, Yuan Wang, Xiaobing Li, Feng Yu, [Tao Yu$^\dag$](https://ytrock.com/), Qionghai Dai$^\dag$<br>Submitted to *ACM Transactions on Graphics (TOG), Volume 43, Issue 4*.<br>
 
 ## Conference Paper
 
-- [ELGAR:  Expressive Cello Performance Motion Generation for Audio](https://dl.acm.org/doi/10.1145/3721238.3730756)<br><img title="" src="https://shiyi099.github.io/homepage/images/publications/ELGAR.jpg" alt="" data-align="inline">Zhiping Qiu, Yitong Jin, Yuan Wang, **Yi Shi**, Chongwu Wang, Chao Tan, Xiaobing Li, Feng Yu, Tao Yu$^\dag$, Qionghai Dai$^\dag$<br>Submitted to *ACM SIGGRAPH 2025*.<br>
+- [ELGAR:  Expressive Cello Performance Motion Generation for Audio](https://dl.acm.org/doi/10.1145/3721238.3730756)<br><img title="" src="https://shiyi099.github.io/homepage/images/publications/ELGAR.jpg" alt="" data-align="inline">Zhiping Qiu, Yitong Jin, Yuan Wang, **Yi Shi**, Chongwu Wang, Chao Tan, Xiaobing Li, Feng Yu, [Tao Yu$^\dag$](https://ytrock.com/), Qionghai Dai$^\dag$<br>Submitted to *ACM SIGGRAPH 2025*.<br>
 
 ---
 
